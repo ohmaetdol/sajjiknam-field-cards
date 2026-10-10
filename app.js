@@ -14,7 +14,7 @@ const cards=[
       "일 때문에 수업을 못 간 적도 있어요?",
       "일을 하고 있는데도 대학에 오고 싶었던 이유가 있어요?"
     ],
-    "shot": "학교 이동, 오늘 일정, 실제 쓰는 노트"
+    "shot": "캠퍼스를 걸으며 만나는 모습, 수업 건물, 오늘 일정"
   },
   {
     "tab": "식사",
@@ -31,7 +31,7 @@ const cards=[
       "그건 얼마였어요?",
       "다른 건 아껴도 여기는 돈을 쓰는 편이에요?"
     ],
-    "shot": "메뉴 고르기, 식사, 계산"
+    "shot": "학식 메뉴 고르기, 음식 받기, 가격, 식사와 계산"
   },
   {
     "tab": "첫 300만원",
@@ -49,7 +49,7 @@ const cards=[
       "그 손님은 어떻게 알게 됐어요?",
       "들어간 비용을 빼면 얼마가 남았어요?"
     ],
-    "shot": "당시 팔던 것, 첫 거래 기록. 자료가 없으면 이야기로 듣기"
+    "shot": "도서관으로 들어가는 모습, 책과 노트. 대화는 말해도 되는 공간에서"
   },
   {
     "tab": "자산의 과정",
@@ -66,7 +66,7 @@ const cards=[
       "중간에 돈을 더 넣었어요? 그 돈은 어디서 났어요?",
       "이미 팔아서 남긴 돈이에요, 지금 팔면 그 정도라는 거예요?"
     ],
-    "shot": "금액을 확인할 자료, 돈이 늘어난 순서를 적는 장면"
+    "shot": "캠퍼스 건물이 보이는 야외 자리에 앉은 모습, 확인 가능한 자산 자료"
   },
   {
     "tab": "실패",
@@ -83,7 +83,7 @@ const cards=[
       "언제부터 뭔가 잘못됐다고 느꼈어요?",
       "그 뒤에 비슷한 일이 생겼을 때는 어떻게 했어요?"
     ],
-    "shot": "그때 자료나 메모가 있다면 함께 보기"
+    "shot": "같은 야외 자리에서 대화 이어가기, 당시 자료가 있다면 함께 보기"
   },
   {
     "tab": "2천만원",
@@ -100,33 +100,35 @@ const cards=[
       "그 2천만원에서 생활비도 써야 한다면요?",
       "어느 정도까지 해보고 안 되면 그만두실 거예요?"
     ],
-    "shot": "해볼 일을 순서대로 적는 장면"
+    "shot": "학생들이 오가는 공간의 분위기, 출연자와 대화하는 모습"
   },
   {
     "tab": "마무리",
     "title": "앞으로는 어떻게 살고 싶어요?",
-    "q": "앞으로 돈을 모아서 제일 하고 싶은 게 뭐예요?",
-    "goal": "돈을 버는 이유와 앞으로 하고 싶은 일",
+    "q": "이제 독서실 가시는 거예요? 오늘은 무슨 공부 하세요?",
+    "goal": "오늘 공부할 것만 짧게 듣고, 공부하러 가는 모습으로 끝내기",
     "answers": [
       "지키고 싶은 것과 그걸 위해 실제로 한 선택",
       "처음 시작하던 자신에게 해줄 말과 그 이유"
     ],
     "back": "처음 300만원 모으던 때로 돌아가면, 자신한테 무슨 말을 해주고 싶어요?",
     "follow": [
-      "그걸 위해 요즘 하고 있는 게 있어요?"
+      "앞으로 하고 싶은 일 때문에 배우는 거예요?",
+      "처음 돈 모으던 자신한테 한마디 해준다면요?"
     ],
-    "shot": "마무리 대화, 걸어가는 모습, 썸네일용 상반신"
+    "shot": "독서실로 걸어가기 → 입구에서 인사 → 입실로 끝. 자리 잡고 책 펴는 모습은 촬영 가능한 경우만"
   }
 ];
-const locations=[{name:'캠퍼스',items:[0]},{name:'식사 자리',items:[1]},{name:'테이블',items:[2,3,4,5]},{name:'마무리',items:[6]}];
+const locations=[{name:'캠퍼스',items:[0]},{name:'도서관',items:[2]},{name:'캠퍼스 야외 자리',items:[3,4]},{name:'학식당',items:[1]},{name:'학생들이 모인 공간',items:[5]},{name:'독서실로 이동',items:[6]}];
+const route=locations.flatMap(l=>l.items);
 const key='sajjiknam-yujin-field-v1';let state={checks:{},notes:{},shots:{},index:0};let storageOK=true;
 try{const x=JSON.parse(localStorage.getItem(key)||'null');if(x&&typeof x==='object'){state.checks=x.checks||{};state.notes=x.notes||{};state.shots=x.shots||{};state.index=Number.isInteger(x.index)&&x.index>=0&&x.index<cards.length?x.index:0;}}catch(e){storageOK=false;}
 const $=id=>document.getElementById(id);const count=cards.reduce((n,c)=>n+c.answers.length,0);
 function save(){try{localStorage.setItem(key,JSON.stringify(state));storageOK=true;}catch(e){storageOK=false;}$('save').textContent=storageOK?'이 브라우저에 자동 저장':'저장 불가 · 기록을 내려받아 주세요';}
 function progress(){let n=0;cards.forEach((c,i)=>c.answers.forEach((_,j)=>{if(state.checks[i+'-'+j])n++;}));$('total').textContent=`들은 내용 ${n} / ${count}`;$('progress').max=count;$('progress').value=n;const c=cards[state.index];const missing=c.answers.filter((_,j)=>!state.checks[state.index+'-'+j]);$('missing').textContent=missing.length?'더 물어볼 것: '+missing.join(' / '):'이 부분은 다 들었어요.';}
-function render(){const i=state.index,c=cards[i];const location=locations.find(l=>l.items.includes(i));$('nav').replaceChildren(...locations.map(l=>{const b=document.createElement('button');b.textContent=l.name;b.setAttribute('aria-current',l===location?'true':'false');b.onclick=()=>{state.index=l.items[0];save();render();$('nav').scrollIntoView({block:'start'});};return b;}));$('topics').replaceChildren(...(location.items.length>1?location.items.map(n=>{const b=document.createElement('button');b.textContent=cards[n].tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();};return b;}):[]));$('card').innerHTML=`<div class="number">${location.name}${i===6?' · 캠퍼스 또는 같은 테이블':''} · ${String(i+1).padStart(2,'0')} / 07</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">여기서 들을 이야기</div><p>${c.goal}</p></div><div class="question"><div class="eyebrow">첫 질문</div><p>“${c.q}”</p></div><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div><details open><summary>좀 더 물어보기</summary><ul>${c.follow.map(x=>'<li>'+x+'</li>').join('')}</ul></details>`;
-c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===0;$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 질문':location.items.includes(i+1)?'다음 이야기 →':'다음 장소 →';progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
+function render(){const i=state.index,c=cards[i];const location=locations.find(l=>l.items.includes(i));$('nav').replaceChildren(...locations.map(l=>{const b=document.createElement('button');b.textContent=l.name;b.setAttribute('aria-current',l===location?'true':'false');b.onclick=()=>{state.index=l.items[0];save();render();$('nav').scrollIntoView({block:'start'});};return b;}));$('topics').replaceChildren(...(location.items.length>1?location.items.map(n=>{const b=document.createElement('button');b.textContent=cards[n].tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();};return b;}):[]));$('card').innerHTML=`<div class="number">장소 ${locations.indexOf(location)+1} / 6 · ${location.name}</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">여기서 들을 이야기</div><p>${c.goal}</p></div><div class="question"><div class="eyebrow">첫 질문</div><p>“${c.q}”</p></div><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div><details open><summary>좀 더 물어보기</summary><ul>${c.follow.map(x=>'<li>'+x+'</li>').join('')}</ul></details>`;
+c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===0;$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 질문':location.items.includes(route[route.indexOf(i)+1])?'다음 이야기 →':'다음 장소 →';progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
 $('memo').oninput=()=>{state.notes[state.index]=$('memo').value;save();};$('shotDone').onchange=()=>{state.shots[state.index]=$('shotDone').checked;save();};
-for(const [id,d] of [['prev',-1],['next',1]])$(id).onclick=()=>{state.index=Math.max(0,Math.min(cards.length-1,state.index+d));save();render();$('nav').scrollIntoView({block:'start'});};
-$('export').onclick=()=>{let text='# 유진님 편 현장 기록\n\n'+new Date().toLocaleString('ko-KR')+'\n';cards.forEach((c,i)=>{text+='\n## '+c.tab+' · '+c.title+'\n여기서 들을 이야기: '+c.goal+'\n'+c.answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n- ['+(state.shots[i]?'x':' ')+'] 화면 확보\n\n메모: '+(state.notes[i]||'없음')+'\n';});const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='유진님_촬영기록.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+for(const [id,d] of [['prev',-1],['next',1]])$(id).onclick=()=>{state.index=route[Math.max(0,Math.min(route.length-1,route.indexOf(state.index)+d))];save();render();$('nav').scrollIntoView({block:'start'});};
+$('export').onclick=()=>{let text='# 유진님 편 현장 기록\n\n'+new Date().toLocaleString('ko-KR')+'\n';route.forEach(i=>{const c=cards[i];text+='\n## '+locations.find(l=>l.items.includes(i)).name+' · '+c.title+'\n여기서 들을 이야기: '+c.goal+'\n'+c.answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n- ['+(state.shots[i]?'x':' ')+'] 화면 확보\n\n메모: '+(state.notes[i]||'없음')+'\n';});const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='유진님_촬영기록.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
 $('reset').onclick=()=>$('resetDialog').showModal();$('cancelReset').onclick=()=>$('resetDialog').close();$('confirmReset').onclick=()=>{state={checks:{},notes:{},shots:{},index:0};save();render();$('resetDialog').close();};render();save();
