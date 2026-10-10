@@ -1,20 +1,131 @@
 const cards=[
-{tab:'캠퍼스',title:'지금은 어떤 삶을 살까?',q:'일찍 돈을 벌기 시작했는데, 대학에서는 무엇을 얻고 싶었어요?',goal:"학교생활과 일을 실제로 어떻게 병행하고, 대학을 다니는 이유는 무엇인지.",answers:["오늘 수업·업무 시간과 학교가 끝난 뒤 할 일을 구체적으로 들었다", "대학에서 얻고 싶은 것이 무엇인지 본인의 이유를 들었다", "수업과 일이 겹쳤던 날, 무엇을 선택하고 무엇을 포기했는지 들었다"],back:'그럼 오늘 하루로 돌아가서, 학교 끝나고는 뭘 하세요?',follow:['최근 일정이 겹쳤던 날에는 무엇을 선택했어요?','돈 외에 대학에서 얻고 싶은 게 있나요?'],shot:'실제 이동·가방·노트·오늘 일정'},
-{tab:'식사',title:'돈을 쓰는 기준은?',q:'돈을 모으면서도 아끼고 싶지 않은 지출은 뭐예요?',goal:"돈을 모으기 위해 실제로 어떤 지출을 줄이고, 무엇에는 돈을 쓰는지.",answers:["한 달 생활비 규모와 주로 쓰는 항목을 들었다", "최근 지출 한 건의 금액과 쓰거나 아낀 이유를 들었다", "돈을 모으느라 놓친 경험 또는 돈 덕분에 가능해진 경험 하나를 들었다"],back:'그 이야기가 실제로 드러났던 지출 하나만 떠올려볼까요?',follow:['마지막으로 그런 선택을 했던 때가 언제예요?','지금 다시 선택해도 같을까요?'],shot:'실제 메뉴 선택·계산·식사'},
-{tab:'첫 300만원',title:'출발한 돈의 정체.',q:'처음 시작한 300만원은 어떻게 마련한 돈이었어요?',goal:"처음 300만원을 마련한 과정부터 첫 돈이 남은 거래까지 연결하기.",answers:["언제, 어떤 일이나 경로로 300만원을 마련했는지 들었다", "모은 기간과 본인이 번 돈·지원금·빌린 돈의 비중을 들었다", "첫 사용처·금액, 첫 고객을 구한 방법, 첫 거래의 매출과 비용을 들었다"],back:'그러면 그때로 다시 돌아가서, 그 돈으로 가장 먼저 뭘 하셨어요?',follow:['첫 고객이나 첫 거래는 어떻게 만났어요?','처음 받은 돈에서 비용을 빼면 얼마가 남았어요?'],shot:'당시 작업물·거래 기록·메모. 없으면 회고로 구분'},
-{tab:'자산의 과정',title:'수억원까지, 빈칸 없이.',q:'첫 300만원 이후 돈이 가장 크게 늘어난 계기는 무엇이었어요?',goal:"300만원에서 현재 자산까지, 돈이 늘어난 경로를 구분해서 설명할 수 있게 하기.",answers:["기준일과 자산 종류별 금액, 빚을 빼고 남는 금액을 들었다", "사업에서 남긴 돈·투자 손익·추가로 넣거나 지원받은 돈을 나눠 들었다", "가장 크게 늘어난 시점의 원금·추가 투입금·결과와 실현 수익인지 평가액인지 들었다"],back:'그 선택 직전에는 얼마였고, 이후에는 어떻게 달라졌어요?',follow:['추가로 넣거나 빌린 돈도 있었나요?','현재 평가액인가요, 팔아서 남긴 돈인가요?'],shot:'자산 근거 + 시점·자금 출처·손익을 적은 연표'},
-{tab:'실패',title:'결과 뒤에 치른 대가.',q:'기대와 가장 다르게 흘러간 사업이나 투자는 뭐였어요?',goal:"잘된 결과만으로는 보이지 않는 시행착오와 이후 달라진 행동을 찾기.",answers:["기대와 달랐던 실제 사례 하나와 당시 선택한 이유를 들었다", "그 일에 쓴 돈·시간과 실제 결과를 들었다. 금전 손실이 없었다면 없다고 확인했다", "그 경험 뒤 실제로 바꾼 행동과 다음에 적용한 사례를 들었다"],back:'그때의 판단으로 돌아가 보면, 무엇을 놓쳤던 걸까요?',follow:['그 선택을 멈추거나 바꾼 계기는요?','같은 상황이라면 지금은 무엇부터 확인해요?'],shot:'실제 자료·노트·관련 기록. 실패를 만들어내지 않기'},
-{tab:'2천만원',title:'다시 시작한다면.',q:'지금 다시 2천만원으로 시작한다면, 돈을 쓰기 전에 무엇부터 확인할까요?',goal:"2천만원으로 다시 시작한다는 가정에서, 선택의 순서와 판단 기준을 알아내기.",answers:["누가, 언제 쓸 돈인지와 생활비·소득·부채 등 가정의 조건을 들었다", "그 조건에서 내일 할 첫 행동과 돈을 쓰기 전 확인할 것을 들었다", "얼마의 돈·시간을 써보고, 어떤 결과면 계속하거나 멈출지 들었다"],back:'그래서 내일 바로 할 수 있는 첫 행동 하나는 뭘까요?',follow:['직장 소득이 있는 사람과 생활비가 급한 사람은 어떻게 달라요?','수입이나 투자 기간이 바뀌어도 같은 선택인가요?'],shot:'판단 순서를 직접 적는 손과 완성본. 핵심은 영상에서 공개'},
-{tab:'마무리',title:'돈 말고, 남길 이야기.',q:'돈을 더 모으는 것 말고 앞으로 꼭 지키고 싶은 삶은 뭐예요?',goal:"이 사람의 돈을 버는 이유와 앞으로 지키고 싶은 삶을 남기기.",answers:["지키고 싶은 삶의 기준과 그 기준 때문에 실제로 한 선택을 들었다", "처음 시작하는 자신에게 해주고 싶은 말과 그 말을 하는 경험적 이유를 들었다"],back:'오늘 이야기 중 시청자가 하나만 기억한다면, 무엇이면 좋겠어요?',follow:['그 기준을 위해 지금 하고 있는 일이 있나요?'],shot:'자연스러운 마무리·이동 컷·썸네일 상반신 컷'}
+  {
+    "tab": "캠퍼스",
+    "title": "학교 다니면서 일은 언제 해요?",
+    "q": "오늘 수업 끝나면 뭐 하세요?",
+    "goal": "학교와 일을 어떻게 같이 하는지",
+    "answers": [
+      "오늘 수업 시간과 일하는 시간",
+      "대학에 다니기로 한 이유",
+      "수업과 일이 겹쳤을 때 한 선택"
+    ],
+    "back": "그래서 오늘은 학교 끝나고 어디로 가세요?",
+    "follow": [
+      "일 때문에 수업을 못 간 적도 있어요?",
+      "일을 하고 있는데도 대학에 오고 싶었던 이유가 있어요?"
+    ],
+    "shot": "학교 이동, 오늘 일정, 실제 쓰는 노트"
+  },
+  {
+    "tab": "식사",
+    "title": "어디에 쓰고, 어디서 아껴요?",
+    "q": "평소에 한 달 생활비는 얼마나 쓰세요?",
+    "goal": "실제로 돈을 쓰고 아끼는 방식",
+    "answers": [
+      "한 달 생활비와 주로 쓰는 곳",
+      "최근 쓴 돈의 금액과 이유",
+      "돈을 모으면서 못 한 일, 할 수 있게 된 일"
+    ],
+    "back": "최근에 산 것 하나만 얘기해주실래요?",
+    "follow": [
+      "그건 얼마였어요?",
+      "다른 건 아껴도 여기는 돈을 쓰는 편이에요?"
+    ],
+    "shot": "메뉴 고르기, 식사, 계산"
+  },
+  {
+    "tab": "첫 300만원",
+    "title": "처음 300만원",
+    "q": "그 300만원은 어떻게 모으신 거예요?",
+    "goal": "돈을 모은 때부터 첫 판매까지",
+    "answers": [
+      "언제, 무슨 일로 모았나",
+      "얼마나 걸렸나? 도움받거나 빌린 돈도 있나",
+      "처음 쓴 돈 / 첫 손님을 구한 방법 / 팔고 남은 돈"
+    ],
+    "back": "그 돈으로 처음 뭘 하셨어요?",
+    "follow": [
+      "처음 팔았던 거 하나만 얘기해주실래요? 얼마에 팔았어요?",
+      "그 손님은 어떻게 알게 됐어요?",
+      "들어간 비용을 빼면 얼마가 남았어요?"
+    ],
+    "shot": "당시 팔던 것, 첫 거래 기록. 자료가 없으면 이야기로 듣기"
+  },
+  {
+    "tab": "자산의 과정",
+    "title": "300만원이 어떻게 수억원이 됐어요?",
+    "q": "돈이 크게 늘었던 때가 언제예요?",
+    "goal": "사업으로 번 돈과 투자로 번 돈을 나눠 듣기",
+    "answers": [
+      "지금 자산별 금액과 확인 날짜 / 빚을 빼고 남는 돈",
+      "사업으로 남긴 돈 / 투자로 번 돈·잃은 돈 / 추가로 들어온 돈",
+      "크게 늘기 전 금액과 늘어난 뒤 금액 / 팔아서 남긴 돈인지"
+    ],
+    "back": "그때 얼마를 넣어서 얼마가 된 거예요?",
+    "follow": [
+      "중간에 돈을 더 넣었어요? 그 돈은 어디서 났어요?",
+      "이미 팔아서 남긴 돈이에요, 지금 팔면 그 정도라는 거예요?"
+    ],
+    "shot": "금액을 확인할 자료, 돈이 늘어난 순서를 적는 장면"
+  },
+  {
+    "tab": "실패",
+    "title": "잘 안된 적도 있어요?",
+    "q": "사업이나 투자하면서 생각대로 안 된 적도 있어요?",
+    "goal": "어떤 일이 있었고, 그 뒤 뭘 바꿨는지",
+    "answers": [
+      "실제로 안 풀렸던 일과 처음 시작한 이유",
+      "들어간 돈·시간과 결과. 손실이 없다면 없는 대로",
+      "그 뒤 바꾼 행동과 실제로 해본 일"
+    ],
+    "back": "그때 무슨 일이 있었는지 하나만 얘기해주실래요?",
+    "follow": [
+      "언제부터 뭔가 잘못됐다고 느꼈어요?",
+      "그 뒤에 비슷한 일이 생겼을 때는 어떻게 했어요?"
+    ],
+    "shot": "그때 자료나 메모가 있다면 함께 보기"
+  },
+  {
+    "tab": "2천만원",
+    "title": "지금 2천만원으로 다시 시작한다면?",
+    "q": "지금 2천만원만 가지고 다시 시작하면 뭐부터 하실 거예요?",
+    "goal": "어떤 상황을 가정한 답인지 먼저 확인하기",
+    "answers": [
+      "생활비가 따로 있는지 / 매달 수입·빚 / 언제 쓸 돈인지",
+      "당장 할 일과 돈을 쓰기 전에 알아볼 것",
+      "얼마나 써보고, 어느 정도 결과면 계속하거나 멈출지"
+    ],
+    "back": "그럼 내일 당장 뭘 해볼 거예요?",
+    "follow": [
+      "그 2천만원에서 생활비도 써야 한다면요?",
+      "어느 정도까지 해보고 안 되면 그만두실 거예요?"
+    ],
+    "shot": "해볼 일을 순서대로 적는 장면"
+  },
+  {
+    "tab": "마무리",
+    "title": "앞으로는 어떻게 살고 싶어요?",
+    "q": "앞으로 돈을 모아서 제일 하고 싶은 게 뭐예요?",
+    "goal": "돈을 버는 이유와 앞으로 하고 싶은 일",
+    "answers": [
+      "지키고 싶은 것과 그걸 위해 실제로 한 선택",
+      "처음 시작하던 자신에게 해줄 말과 그 이유"
+    ],
+    "back": "처음 300만원 모으던 때로 돌아가면, 자신한테 무슨 말을 해주고 싶어요?",
+    "follow": [
+      "그걸 위해 요즘 하고 있는 게 있어요?"
+    ],
+    "shot": "마무리 대화, 걸어가는 모습, 썸네일용 상반신"
+  }
 ];
 const key='sajjiknam-yujin-field-v1';let state={checks:{},notes:{},shots:{},index:0};let storageOK=true;
 try{const x=JSON.parse(localStorage.getItem(key)||'null');if(x&&typeof x==='object'){state.checks=x.checks||{};state.notes=x.notes||{};state.shots=x.shots||{};state.index=Number.isInteger(x.index)&&x.index>=0&&x.index<cards.length?x.index:0;}}catch(e){storageOK=false;}
 const $=id=>document.getElementById(id);const count=cards.reduce((n,c)=>n+c.answers.length,0);
 function save(){try{localStorage.setItem(key,JSON.stringify(state));storageOK=true;}catch(e){storageOK=false;}$('save').textContent=storageOK?'이 브라우저에 자동 저장':'저장 불가 · 기록을 내려받아 주세요';}
-function progress(){let n=0;cards.forEach((c,i)=>c.answers.forEach((_,j)=>{if(state.checks[i+'-'+j])n++;}));$('total').textContent=`확보한 답 ${n} / ${count}`;$('progress').max=count;$('progress').value=n;const c=cards[state.index];const missing=c.answers.filter((_,j)=>!state.checks[state.index+'-'+j]);$('missing').textContent=missing.length?'아직 필요한 답: '+missing.join(' / '):'이 구간의 핵심 답을 모두 확보했어요.';}
-function render(){const i=state.index,c=cards[i];$('nav').replaceChildren(...cards.map((x,n)=>{const b=document.createElement('button');b.textContent=x.tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();$("nav").scrollIntoView({block:"start"});};return b;}));$('card').innerHTML=`<div class="number">${String(i+1).padStart(2,'0')} / 07</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">꼭 알아낼 것</div><p>${c.goal}</p></div><div class="question"><div class="eyebrow">이렇게 시작하세요</div><p>“${c.q}”</p></div><div class="check-title">이 내용까지 들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">이야기가 샜다면, 이 질문으로</div><p>“${c.back}”</p></div><details open><summary>답이 막연하면 이어서 물어보세요</summary><ul>${c.follow.map(x=>'<li>'+x+'</li>').join('')}</ul></details>`;
-c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='챙길 화면: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===0;$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 구간':'다음 구간 →';progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
+function progress(){let n=0;cards.forEach((c,i)=>c.answers.forEach((_,j)=>{if(state.checks[i+'-'+j])n++;}));$('total').textContent=`들은 내용 ${n} / ${count}`;$('progress').max=count;$('progress').value=n;const c=cards[state.index];const missing=c.answers.filter((_,j)=>!state.checks[state.index+'-'+j]);$('missing').textContent=missing.length?'더 물어볼 것: '+missing.join(' / '):'이 부분은 다 들었어요.';}
+function render(){const i=state.index,c=cards[i];$('nav').replaceChildren(...cards.map((x,n)=>{const b=document.createElement('button');b.textContent=x.tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();$("nav").scrollIntoView({block:"start"});};return b;}));$('card').innerHTML=`<div class="number">${String(i+1).padStart(2,'0')} / 07</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">여기서 들을 이야기</div><p>${c.goal}</p></div><div class="question"><div class="eyebrow">첫 질문</div><p>“${c.q}”</p></div><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div><details open><summary>좀 더 물어보기</summary><ul>${c.follow.map(x=>'<li>'+x+'</li>').join('')}</ul></details>`;
+c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===0;$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 구간':'다음 구간 →';progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
 $('memo').oninput=()=>{state.notes[state.index]=$('memo').value;save();};$('shotDone').onchange=()=>{state.shots[state.index]=$('shotDone').checked;save();};
 for(const [id,d] of [['prev',-1],['next',1]])$(id).onclick=()=>{state.index=Math.max(0,Math.min(cards.length-1,state.index+d));save();render();$('nav').scrollIntoView({block:'start'});};
-$('export').onclick=()=>{let text='# 유진님 편 현장 기록\n\n'+new Date().toLocaleString('ko-KR')+'\n';cards.forEach((c,i)=>{text+='\n## '+c.tab+' · '+c.title+'\n꼭 알아낼 것: '+c.goal+'\n'+c.answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n- ['+(state.shots[i]?'x':' ')+'] 화면 확보\n\n메모: '+(state.notes[i]||'없음')+'\n';});const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='유진님_촬영기록.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+$('export').onclick=()=>{let text='# 유진님 편 현장 기록\n\n'+new Date().toLocaleString('ko-KR')+'\n';cards.forEach((c,i)=>{text+='\n## '+c.tab+' · '+c.title+'\n여기서 들을 이야기: '+c.goal+'\n'+c.answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n- ['+(state.shots[i]?'x':' ')+'] 화면 확보\n\n메모: '+(state.notes[i]||'없음')+'\n';});const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='유진님_촬영기록.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
 $('reset').onclick=()=>$('resetDialog').showModal();$('cancelReset').onclick=()=>$('resetDialog').close();$('confirmReset').onclick=()=>{state={checks:{},notes:{},shots:{},index:0};save();render();$('resetDialog').close();};render();save();
