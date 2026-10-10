@@ -1,0 +1,27 @@
+/* Mobile field notebook: quiet hierarchy, generous touch targets. */
+:root{background:#f6f7f5;color:#202923;--ink:#203c32;--line:#e3e8e1}
+header{padding-top:22px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.brand{letter-spacing:-1px;font-size:22px}.brand span{letter-spacing:2px;color:#8a968b;font-size:9px;font-weight:600}
+.private{color:#617466;background:#edf1eb;border:none;font-weight:600;padding:7px 11px}
+main{padding-top:22px;padding-bottom:120px}.intro{padding:0 2px}.intro>.eyebrow{font-size:11px;color:#718175;letter-spacing:.3px}
+h1{font-size:34px;letter-spacing:-1.5px;line-height:1.34;margin:14px 0}.sub{font-size:13px;color:#7a847c}
+.progress-label{margin-top:25px}.progress-label strong{color:#365644;font-size:12px}.progress-label span{font-size:10px;color:#7a847c}
+progress{height:4px;margin:10px 0 16px}progress::-webkit-progress-bar{background:#e3e9e0}progress::-webkit-progress-value{background:#52765b}
+nav{background:#f6f7f5f7;padding:12px 0;border-bottom:1px solid var(--line);backdrop-filter:blur(12px);gap:6px}
+nav button{font-size:12px;min-height:42px;padding:10px 14px;border-color:#e0e6dc;background:#fff;color:#607064}
+nav button[aria-current=true]{background:var(--ink);border-color:var(--ink);box-shadow:0 2px 4px #203c3215}
+article{border:1px solid var(--line);border-radius:20px;padding:24px 22px;margin-top:18px;box-shadow:0 5px 24px #263f2d04}
+.number{font-size:10px;letter-spacing:2px;font-weight:700;color:#81917e}article h2{font-size:25px;letter-spacing:-1px;margin:12px 0 24px;line-height:1.45}
+.question{border-top:1px solid var(--line);padding-top:22px}.question .eyebrow{font-size:10px;letter-spacing:.5px;color:#7e8b7f}.question p{font-size:21px;line-height:1.65;letter-spacing:-.65px;margin-bottom:26px}
+.check-title{font-size:11px;color:#6d7b6f;letter-spacing:.2px}.answer{border-bottom:1px solid #edf0e9;font-size:15px;line-height:1.75;gap:12px;padding:15px 0;min-height:60px}
+.answer:has(input:checked){background:#f3f7ef;border-radius:9px;color:#4c7051;padding-left:9px;padding-right:6px}
+.answer input,.shot-check input{accent-color:#486d4e;width:24px;height:24px}.rescue{background:#f5f0e7;border:1px solid #eee6d7;border-left:3px solid #b69b6d;padding:17px;margin-top:24px;border-radius:11px}
+.rescue .eyebrow{font-size:10px;color:#8a734f;letter-spacing:.3px}.rescue p{font-size:16px;line-height:1.8;letter-spacing:-.4px;color:#574c37}
+details{font-size:14px;color:#647366}summary{font-size:12px;color:#617163;min-height:48px;padding:12px 0}
+.move{margin-top:20px;padding:22px;background:#eef2eb;border:1px solid #e1e8dc;border-radius:16px}.move .eyebrow{font-size:10px;color:#6f806b}.move h2{font-size:21px;margin:9px 0 14px}.move p{font-size:13px;line-height:1.9}#missing{color:#596c50}#shot{color:#78816f;border-top:1px solid #dce3d5;padding-top:12px}.shot-check{font-size:13px;margin-top:12px}
+.notes{padding:26px 2px 0}.notes label{font-size:13px}.notes span{font-size:11px;font-weight:400;color:#859080}textarea{border-color:#dfe5d9;border-radius:14px;font-size:16px;padding:16px;background:#fff;min-height:100px}textarea::placeholder{color:#a0a79c}
+.paging{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:720px;padding:12px 22px calc(12px + env(safe-area-inset-bottom));background:#f6f7f5f5;backdrop-filter:blur(16px);border-top:1px solid var(--line);z-index:5;gap:10px}
+.paging button{min-height:50px;border-radius:13px;font-size:14px;font-weight:650}.paging #prev{flex:.8;background:transparent;border-color:#dce3d7}.paging #next{flex:1.6;background:var(--ink);border-color:var(--ink)}
+footer{margin-top:25px;color:#939b90;font-size:10px;line-height:1.9}.tools{margin-top:16px}.tools button{border:0;padding:8px 0;margin-right:16px;font-size:11px;text-decoration:underline;text-underline-offset:4px;color:#798575}
+dialog{box-shadow:0 20px 80px #0002}dialog p{color:#697567;font-size:14px}#confirmReset{background:var(--ink);color:white}
+@media(min-width:650px){main{padding-top:32px}.intro{padding-bottom:8px}h1{font-size:42px}article{padding:32px}.question p{font-size:24px}.move{padding:26px 32px}}

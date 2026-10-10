@@ -1,0 +1,11 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#f5f4ee"><meta name="robots" content="noindex,nofollow"><title>사찍남 · 현장 카드</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="refined.css"></head><body>
+<header><div class="brand">사찍남 <span>FIELD NOTES</span></div><span class="private">현장용</span></header>
+<main><section class="intro"><p class="eyebrow">유진님 편 · 300만원에서 수억원까지</p><h1>질문보다,<br>얻은 답을 확인하세요.</h1><p class="sub">이야기는 따라가도 좋아요. 핵심 답은 놓치지 않기.</p><div class="progress-label"><strong id="total"></strong><span id="save" role="status">이 브라우저에 자동 저장</span></div><progress id="progress" max="20" value="0" aria-label="전체 답변 확보 진행률"></progress></section>
+<nav id="nav" aria-label="촬영 구간"></nav>
+<article id="card"></article>
+<section class="move"><div class="eyebrow">장소를 떠나기 전 · 30초</div><h2>빠진 답, 지금 한 번 더.</h2><p id="missing"></p><p id="shot"></p><label class="shot-check"><input type="checkbox" id="shotDone"> 필요한 화면도 확보했어요</label></section>
+<section class="notes"><label for="memo">현장 메모 <span>금액·시점·다시 물어볼 말</span></label><textarea id="memo" rows="3" placeholder="답변의 핵심만 짧게 적어두세요."></textarea></section>
+<div class="paging"><button id="prev">이전 구간</button><button id="next">다음 구간 →</button></div>
+<footer>체크는 ‘질문 완료’가 아닌 ‘답변 확보’ 표시입니다.<br>메모·체크는 이 기기의 현재 브라우저에만 저장됩니다.<br>나이·시작 자금·자산 규모는 촬영에서 확인해주세요.<div class="tools"><button id="export">기록 내려받기</button><button id="reset">촬영 기록 초기화</button></div></footer></main>
+<dialog id="resetDialog"><h2>촬영 기록을 비울까요?</h2><p>이 브라우저에 저장된 체크와 메모를 지웁니다. 필요하면 먼저 기록을 내려받으세요.</p><button id="cancelReset">취소</button><button id="confirmReset">기록 비우기</button></dialog>
+<script src="app.js"></script></body></html>
