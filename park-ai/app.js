@@ -604,14 +604,40 @@ const cards=[
 ];
 const locations=[{"name": "헬스장", "items": [0]}, {"name": "사무실", "items": [1, 2]}, {"name": "교육 현장", "items": [3]}, {"name": "매장", "items": [4, 5]}];
 const route=locations.flatMap(l=>l.items);
-const key='sajjiknam-park-ai-field-v1';let state={checks:{},notes:{},shots:{},index:0};let storageOK=true;
-try{const x=JSON.parse(localStorage.getItem(key)||'null');if(x&&typeof x==='object'){state.checks=x.checks||{};state.notes=x.notes||{};state.shots=x.shots||{};state.index=Number.isInteger(x.index)&&x.index>=0&&x.index<cards.length?x.index:0;}}catch(e){storageOK=false;}
+const key='sajjiknam-park-ai-field-v1';let state={checks:{},notes:{},shots:{},questions:{},index:0};let storageOK=true;
+try{const x=JSON.parse(localStorage.getItem(key)||'null');if(x&&typeof x==='object'){state.questions=x.questions||{};state.checks=x.checks||{};state.notes=x.notes||{};state.shots=x.shots||{};state.index=Number.isInteger(x.index)&&x.index>=0&&x.index<cards.length?x.index:0;}}catch(e){storageOK=false;}
 const $=id=>document.getElementById(id);const count=cards.reduce((n,c)=>n+c.answers.length,0);
 function save(){try{localStorage.setItem(key,JSON.stringify(state));storageOK=true;}catch(e){storageOK=false;}$('save').textContent=storageOK?'이 브라우저에 자동 저장':'저장 불가 · 기록을 내려받아 주세요';}
 function progress(){let n=0;cards.forEach((c,i)=>c.answers.forEach((_,j)=>{if(state.checks[i+'-'+j])n++;}));$('total').textContent=`들은 내용 ${n} / ${count}`;$('progress').max=count;$('progress').value=n;const c=cards[state.index];const missing=c.answers.filter((_,j)=>!state.checks[state.index+'-'+j]);$('missing').textContent=missing.length?'더 물어볼 것: '+missing.join(' / '):'이 부분은 다 들었어요.';}
+
+function questionKey(i,q){return i+':'+q;}
+function addQuestionCheck(el,i,q){
+ const k=questionKey(i,q);if(el.querySelector('.question-check'))return;
+ const label=document.createElement('label');label.className='question-check';
+ const input=document.createElement('input');input.type='checkbox';input.dataset.questionKey=k;input.checked=!!state.questions[k];input.setAttribute('aria-label','질문 완료: '+q);
+ const span=document.createElement('span');while(el.firstChild)span.append(el.firstChild);
+ label.append(input,span);el.append(label);
+ input.onchange=()=>{state.questions[k]=input.checked;document.querySelectorAll('[data-question-key]').forEach(x=>{if(x.dataset.questionKey===k)x.checked=input.checked;});save();};
+}
+function decorateQuestions(){
+ document.querySelectorAll('#question-review > section').forEach((section,i)=>{
+ const c=cards[i];if(!c)return;
+ section.querySelectorAll('ol li').forEach((el,j)=>addQuestionCheck(el,i,c.flow.flatMap(f=>f.questions)[j]));
+ section.querySelectorAll('.branch').forEach((el,j)=>addQuestionCheck(el,i,c.flow.flatMap(f=>f.branches)[j].ask));
+ });
+ const i=state.index,c=cards[i];
+ document.querySelectorAll('#card .flow-block').forEach((block,n)=>{
+ block.querySelectorAll('ol li').forEach((el,j)=>addQuestionCheck(el,i,c.flow[n].questions[j]));
+ block.querySelectorAll('.branch').forEach((el,j)=>addQuestionCheck(el,i,c.flow[n].branches[j].ask));
+ });
+ addQuestionCheck(document.querySelector('#card .question p'),i,c.q);
+ addQuestionCheck(document.querySelector('#card .rescue p'),i,c.back);
+ document.querySelectorAll('[data-question-key]').forEach(x=>{x.checked=!!state.questions[x.dataset.questionKey];});
+}
+
 function render(){const i=state.index,c=cards[i];const location=locations.find(l=>l.items.includes(i));$('nav').replaceChildren(...locations.map(l=>{const b=document.createElement('button');b.textContent=l.name;b.setAttribute('aria-current',l===location?'true':'false');b.onclick=()=>{state.index=l.items[0];save();render();$('nav').scrollIntoView({block:'start'});};return b;}));$('topics').replaceChildren(...(location.items.length>1?location.items.map(n=>{const b=document.createElement('button');b.textContent=cards[n].tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();};return b;}):[]));$('card').innerHTML=`<div class="number">장소 ${locations.indexOf(location)+1} / ${locations.length} · ${location.name}</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">먼저 볼 상황</div><p>${c.goal}</p></div><div class="question"><div class="eyebrow">상황이 보인 뒤 첫 질문</div><p>“${c.q}”</p></div><section class="main-questions">${c.flow.map((f,n)=>`<section class="flow-block"><h3>${n+1}. ${f.title}</h3><p class="scene-note">${f.scene}</p><ol>${f.questions.map(q=>'<li>'+q+'</li>').join('')}</ol><details><summary>이 답이 나오면 이렇게 이어 묻기</summary>${f.branches.map(b=>'<p class="branch"><strong>'+b.when+'</strong><br>'+b.ask+'</p>').join('')}</details></section>`).join('')}</section><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div>${c.note?'<div class="field-note">'+c.note+'</div>':''}`;
-c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===0;$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 질문':location.items.includes(route[route.indexOf(i)+1])?'다음 이야기 →':'다음 장소 →';progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
+c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===0;$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 질문':location.items.includes(route[route.indexOf(i)+1])?'다음 이야기 →':'다음 장소 →';decorateQuestions();progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
 $('memo').oninput=()=>{state.notes[state.index]=$('memo').value;save();};$('shotDone').onchange=()=>{state.shots[state.index]=$('shotDone').checked;save();};
 for(const [id,d] of [['prev',-1],['next',1]])$(id).onclick=()=>{state.index=route[Math.max(0,Math.min(route.length-1,route.indexOf(state.index)+d))];save();render();$('nav').scrollIntoView({block:'start'});};
-$('export').onclick=()=>{let text='# 박대표님 편 현장 기록\n\n'+new Date().toLocaleString('ko-KR')+'\n';route.forEach(i=>{const c=cards[i];text+='\n## '+locations.find(l=>l.items.includes(i)).name+' · '+c.title+'\n먼저 볼 상황: '+c.goal+'\n'+c.answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n- ['+(state.shots[i]?'x':' ')+'] 화면 확보\n\n메모: '+(state.notes[i]||'없음')+'\n';});const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='박대표님_촬영기록.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
-$('reset').onclick=()=>$('resetDialog').showModal();$('cancelReset').onclick=()=>$('resetDialog').close();$('confirmReset').onclick=()=>{state={checks:{},notes:{},shots:{},index:0};save();render();$('resetDialog').close();};render();save();
+$('export').onclick=()=>{let text='# 박대표님 편 현장 기록\n\n'+new Date().toLocaleString('ko-KR')+'\n';route.forEach(i=>{const c=cards[i];text+='\n### 질문 체크 · '+c.title+'\n'+[...new Set(c.flow.flatMap(f=>[...f.questions,...f.branches.map(b=>b.ask)]).concat(c.back))].map(q=>'- ['+(state.questions[questionKey(i,q)]?'x':' ')+'] '+q).join('\n')+'\n';text+='\n## '+locations.find(l=>l.items.includes(i)).name+' · '+c.title+'\n먼저 볼 상황: '+c.goal+'\n'+c.answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n- ['+(state.shots[i]?'x':' ')+'] 화면 확보\n\n메모: '+(state.notes[i]||'없음')+'\n';});const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='박대표님_촬영기록.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+$('reset').onclick=()=>$('resetDialog').showModal();$('cancelReset').onclick=()=>$('resetDialog').close();$('confirmReset').onclick=()=>{state={checks:{},notes:{},shots:{},questions:{},index:0};save();render();$('resetDialog').close();};render();save();
