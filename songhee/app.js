@@ -331,6 +331,16 @@ const cards=[
             "when": "한국어를 가르친다고 하면",
             "ask": "학생들은 어느 나라에 있어요? 서로 어떻게 만나서 수업해요?"
           }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-3-1",
+            "cuts": [
+              0,
+              1
+            ],
+            "action": "회사 밖에서 걸어 나오는 모습부터 실제 귀가 동선을 담는다. 인사는 자연스럽게 나누고, 이동 동작을 질문 때문에 멈추게 하지 않는다."
+          }
         ]
       },
       {
@@ -348,6 +358,14 @@ const cards=[
           {
             "when": "회사 일이 늦어질 수 있다고 하면",
             "ask": "회사에서 늦게 끝나는 날에는 수업 시간을 어떻게 맞추세요?"
+          }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-3-flow-1",
+            "cuts": [
+              0
+            ]
           }
         ]
       },
@@ -395,6 +413,15 @@ const cards=[
             "when": "외식을 줄였다면",
             "ask": "예전에는 얼마나 쓰셨어요? 줄이고 보니 불편한 점도 있어요?"
           }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-3-2",
+            "cuts": [
+              0,
+              1
+            ]
+          }
         ]
       },
       {
@@ -407,6 +434,15 @@ const cards=[
           {
             "when": "가방을 놓고 바로 수업 자리에 앉으면",
             "ask": "지금부터 수업 준비하시는 거예요? 먼저 뭘 확인하세요?"
+          }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-3-1",
+            "cuts": [
+              2
+            ],
+            "action": "현관에 들어와 가방을 놓고 무엇부터 하는지 먼저 담는다. 집 주소·비밀번호가 보이지 않게 찍는다."
           }
         ]
       }
@@ -446,6 +482,17 @@ const cards=[
         ],
         "when": "그 행동을 마치고 여유가 생기면",
         "ask": "이제 수업 시작하기 전까지 뭘 더 해야 해요?"
+      },
+      {
+        "id": "songhee-3-flow-1",
+        "title": "첫 수업까지 남은 시간",
+        "heard": "이 대화로 넘어가기 전에",
+        "action": "수업 시각을 들었으면 실제로 시간을 확인하거나 이동하는 모습을 담는다. 휴대폰을 안 보면 확인 동작을 시키지 않는다.",
+        "cuts": [
+          "귀가 중 실제 행동과 이동하는 모습"
+        ],
+        "when": "실제 장면을 본 뒤 아래 질문으로",
+        "ask": "오늘은 몇 시에 수업이 있어요?"
       }
     ]
   },
@@ -575,6 +622,15 @@ const cards=[
             "when": "자료를 직접 만든다고 하면",
             "ask": "오늘 수업 하나 준비하는 데 얼마나 걸렸어요? 전에 쓰던 자료로는 안 되는 부분도 있어요?"
           }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-4-1",
+            "cuts": [
+              0,
+              1
+            ]
+          }
         ]
       },
       {
@@ -608,6 +664,16 @@ const cards=[
           {
             "when": "학생과 오래 수업했다고 하면",
             "ask": "처음에는 어느 정도였어요? 계속 배우면서 가장 달라진 건 뭐예요?"
+          }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-4-2",
+            "cuts": [
+              0,
+              1,
+              2
+            ]
           }
         ]
       },
@@ -667,6 +733,23 @@ const cards=[
           {
             "when": "준비가 오래 걸렸는데 수업료는 같다고 하면",
             "ask": "그렇게 해도 계속할 만한 일이에요? 시간을 줄이려고 바꿔본 게 있어요?"
+          }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-4-3",
+            "cuts": [
+              0,
+              1,
+              2
+            ]
+          },
+          {
+            "id": "songhee-4-4",
+            "cuts": [
+              0,
+              1
+            ]
           }
         ]
       },
@@ -754,6 +837,15 @@ const cards=[
             "when": "여러 일을 알아봤다면",
             "ask": "그중 지금 하는 일을 고른 이유가 뭐예요?"
           }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-4-flow-3",
+            "cuts": [
+              0,
+              1
+            ]
+          }
         ]
       },
       {
@@ -806,6 +898,15 @@ const cards=[
             "when": "월 수입만으로 시간당 계산하려 할 때",
             "ask": "수업 없는 날에도 자료를 만들거나 학생을 찾는 시간이 있어요? 그 시간도 포함된 거예요?"
           }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-4-flow-4",
+            "cuts": [
+              0,
+              1
+            ]
+          }
         ]
       },
       {
@@ -846,6 +947,14 @@ const cards=[
           {
             "when": "최근 의뢰를 설명하면",
             "ask": "처음에 뭘 부탁받았고, 송희님은 실제로 뭘 해드렸어요? 끝나고 상대방은 뭐라고 하던가요?"
+          }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-4-flow-5",
+            "cuts": [
+              0
+            ]
           }
         ]
       }
@@ -921,6 +1030,41 @@ const cards=[
         ],
         "when": "일의 양을 이해한 다음",
         "ask": "오늘 같은 수업은 한 번에 얼마를 받으세요?"
+      },
+      {
+        "id": "songhee-4-flow-3",
+        "title": "첫 학생 이야기",
+        "heard": "이 대화로 넘어가기 전에",
+        "action": "새 행동을 시키기보다 당시 일을 떠올리며 말하는 표정을 담는다. 첫 문의나 프로필 기록이 남아 있고 공개 가능할 때만 함께 본다.",
+        "cuts": [
+          "첫 학생 이야기를 하는 표정과 반응",
+          "공개 가능한 첫 문의·프로필 기록이 있으면 해당 부분"
+        ],
+        "when": "실제 장면을 본 뒤 아래 질문으로",
+        "ask": "오늘 하는 걸 보니까 수업 시간 말고도 할 일이 있네요. 처음에는 이 일을 어떻게 알게 되셨어요?"
+      },
+      {
+        "id": "songhee-4-flow-4",
+        "title": "한 달 수입 이야기",
+        "heard": "이 대화로 넘어가기 전에",
+        "action": "이미 찍은 준비·수업·후속 업무 컷을 확인한다. 공개 가능한 예약표와 정산이 있으면 같은 기간을 짚는 손과 화면을 담는다.",
+        "cuts": [
+          "한 달 업무량을 보여주는 예약표가 있으면 해당 기간",
+          "공개 가능한 같은 기간 정산과 설명하는 모습"
+        ],
+        "when": "실제 장면을 본 뒤 아래 질문으로",
+        "ask": "처음 한 명을 가르치던 때에서 지금은 학생이 얼마나 늘었어요?"
+      },
+      {
+        "id": "songhee-4-flow-5",
+        "title": "다른 일이 있을 때만",
+        "heard": "이 대화로 넘어가기 전에",
+        "action": "실제로 별도 업무가 있다는 답을 들으면 그 일을 하는 모습이나 공개 가능한 결과물을 본다. 없으면 이 구간은 건너뛴다.",
+        "cuts": [
+          "별도 업무의 실제 작업 또는 공개 가능한 결과물"
+        ],
+        "when": "실제 장면을 본 뒤 아래 질문으로",
+        "ask": "집에서 하는 일은 수업이 전부예요, 또 다른 일도 있으세요?"
       }
     ]
   },
@@ -1007,6 +1151,15 @@ const cards=[
             "when": "그래도 계속할 만하다고 하면",
             "ask": "어떤 점 때문에 그렇게 느끼세요? 최근에 그걸 느꼈던 일이 있어요?"
           }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-5-1",
+            "cuts": [
+              0,
+              1
+            ]
+          }
         ]
       },
       {
@@ -1040,6 +1193,15 @@ const cards=[
           {
             "when": "예전 준비가 지금 수업에 도움 됐다고 하면",
             "ask": "오늘 수업에서도 그때 배운 걸 써먹은 부분이 있었어요?"
+          }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-5-2",
+            "cuts": [
+              0
+            ],
+            "action": "지난 선택을 설명할 때는 표정과 말끝을 담는다. 손 컷을 채우려고 중요한 답변 중 카메라를 돌리지 않는다."
           }
         ]
       },
@@ -1088,6 +1250,15 @@ const cards=[
             "when": "직접 벌었다는 게 의미 있다고 하면",
             "ask": "회사를 다니며 받는 월급과, 직접 학생을 구해서 받은 돈은 느낌이 달랐어요?"
           }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-5-2",
+            "cuts": [
+              1
+            ],
+            "action": "대화가 쉬는 틈에 실제 쉬거나 걷는 모습을 담는다. 생활이 달라졌다는 이야기를 증명할 행동이 없으면 연출하지 않는다."
+          }
         ]
       },
       {
@@ -1125,6 +1296,14 @@ const cards=[
           {
             "when": "일을 줄이거나 바꾸고 싶다고 하면",
             "ask": "언제쯤 바꾸고 싶으세요? 그 전에 준비돼 있어야 하는 건 뭐예요?"
+          }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-5-flow-3",
+            "cuts": [
+              0
+            ]
           }
         ]
       }
@@ -1164,6 +1343,17 @@ const cards=[
         ],
         "when": "오늘 본 생활과 들은 답을 연결해",
         "ask": "앞으로도 지금처럼 회사와 수업을 같이 하고 싶으세요?"
+      },
+      {
+        "id": "songhee-5-flow-3",
+        "title": "앞으로의 선택",
+        "heard": "이 대화로 넘어가기 전에",
+        "action": "앞으로의 생각을 말하는 얼굴과 답변 후 반응을 끝까지 담는다. 고민하는 표정이나 감정을 따로 요청하지 않는다.",
+        "cuts": [
+          "앞으로의 선택을 말하는 모습과 답이 끝난 뒤 반응"
+        ],
+        "when": "실제 장면을 본 뒤 아래 질문으로",
+        "ask": "좋아진 것도 있고 못 하는 것도 생겼는데, 앞으로도 지금처럼 두 일을 같이 하고 싶으세요?"
       }
     ]
   },
@@ -1198,6 +1388,16 @@ const cards=[
           {
             "when": "내일도 회사와 수업이 모두 있다고 하면",
             "ask": "내일 수업 준비는 오늘 해놓으신 거예요, 내일 다시 하세요?"
+          }
+        ],
+        "shotRefs": [
+          {
+            "id": "songhee-6-1",
+            "cuts": [
+              0,
+              1,
+              2
+            ]
           }
         ]
       }
@@ -1248,16 +1448,16 @@ function decorateQuestions(){
  block.querySelectorAll('ol li').forEach((el,j)=>addQuestionCheck(el,i,c.flow[n].questions[j]));
  block.querySelectorAll('.branch').forEach((el,j)=>addQuestionCheck(el,i,c.flow[n].branches[j].ask));
  });
- addQuestionCheck(document.querySelector('#card .question p'),i,c.q);
+ 
  addQuestionCheck(document.querySelector('#card .rescue p'),i,c.back);
  document.querySelectorAll('[data-question-key]').forEach(x=>{x.checked=!!state.questions[x.dataset.questionKey];});
 }
 
 
-function fieldGuide(i){return `<section class="field-guide"><div class="eyebrow">질문 전에 · 현장 컷</div><h3>말을 듣고, 행동을 따라 찍기</h3><p class="scene-note">일하면서 하는 대화는 살리기. 놓치면 끝나는 동작은 먼저 찍고 다음 질문은 서두르지 않기. 실제로 없는 행동은 건너뛰세요.</p>${(cards[i].fieldGuide||[]).map(g=>`<div class="cut-sequence"><h4>${g.title}</h4><p><span class="cut-tag">들은 말</span>${g.heard}</p><p><span class="cut-tag">찍을 행동</span>${g.action}</p>${g.cuts.map((cut,j)=>`<label class="cut-check"><input type="checkbox" data-cut-key="${g.id}-${j}" aria-label="현장 컷 확보: ${cut}"><span>${cut}</span></label>`).join('')}<p class="scene-note">${g.when}</p><p class="cut-question" data-card="${i}" data-ask="${g.ask}">${g.ask}</p></div>`).join('')}<p class="scene-note">확인한 휴먼스토리 장면의 역할을 송희님 동선에 적용한 촬영안입니다. 원본의 무음·현장음 길이를 복제한 지침은 아닙니다.</p></section>`;}
+function fieldGuide(i,n){const refs=cards[i].flow[n].shotRefs||[];return `<section class="field-guide"><div class="eyebrow">먼저 찍고 → 아래 질문으로</div>${refs.map(ref=>{const g=cards[i].fieldGuide.find(g=>g.id===ref.id);return `<div class="cut-sequence"><p>${ref.action||g.action}</p>${ref.cuts.map(j=>`<label class="cut-check"><input type="checkbox" data-cut-key="${g.id}-${j}" aria-label="현장 컷 확보: ${g.cuts[j]}"><span>${g.cuts[j]}</span></label>`).join('')}</div>`;}).join('')}</section>`;}
 function decorateCuts(){document.querySelectorAll('[data-cut-key]').forEach(input=>{const k=input.dataset.cutKey;input.checked=!!state.fieldCuts[k];input.onchange=()=>{state.fieldCuts[k]=input.checked;document.querySelectorAll('[data-cut-key]').forEach(x=>{if(x.dataset.cutKey===k)x.checked=input.checked;});save();};});document.querySelectorAll('.cut-question').forEach(el=>addQuestionCheck(el,Number(el.dataset.card),el.dataset.ask));}
 
-function render(){const i=state.index,c=cards[i];const location=locations.find(l=>l.items.includes(i));$('nav').replaceChildren(...locations.map(l=>{const b=document.createElement('button');b.textContent=l.name;b.setAttribute('aria-current',l===location?'true':'false');b.onclick=()=>{state.index=l.items[0];save();render();$('nav').scrollIntoView({block:'start'});};return b;}));$('topics').replaceChildren(...(location.items.length>1?location.items.map(n=>{const b=document.createElement('button');b.textContent=cards[n].tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();};return b;}):[]));$('card').innerHTML=`<div class="number">장소 ${locations.indexOf(location)+1} / ${locations.length} · ${location.name}</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">먼저 볼 상황</div><p>${c.goal}</p></div>${fieldGuide(i)}<div class="question"><div class="eyebrow">상황이 보인 뒤 첫 질문</div><p>“${c.q}”</p></div><section class="main-questions">${c.flow.map((f,n)=>`<section class="flow-block"><h3>${n+1}. ${f.title}</h3><p class="scene-note">${f.scene}</p><ol>${f.questions.map(q=>'<li>'+q+'</li>').join('')}</ol><details><summary>이 답이 나오면 이렇게 이어 묻기</summary>${f.branches.map(b=>'<p class="branch"><strong>'+b.when+'</strong><br>'+b.ask+'</p>').join('')}</details></section>`).join('')}</section><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div>${c.note?'<div class="field-note">'+c.note+'</div>':''}`;
+function render(){const i=state.index,c=cards[i];const location=locations.find(l=>l.items.includes(i));$('nav').replaceChildren(...locations.map(l=>{const b=document.createElement('button');b.textContent=l.name;b.setAttribute('aria-current',l===location?'true':'false');b.onclick=()=>{state.index=l.items[0];save();render();$('nav').scrollIntoView({block:'start'});};return b;}));$('topics').replaceChildren(...(location.items.length>1?location.items.map(n=>{const b=document.createElement('button');b.textContent=cards[n].tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();};return b;}):[]));$('card').innerHTML=`<div class="number">장소 ${locations.indexOf(location)+1} / ${locations.length} · ${location.name}</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">먼저 볼 상황</div><p>${c.goal}</p></div><section class="main-questions">${c.flow.map((f,n)=>`<section class="flow-block"><h3>${n+1}. ${f.title}</h3><p class="scene-note">${f.scene}</p>${fieldGuide(i,n)}<div class="eyebrow">장면을 본 뒤 물어보기</div><ol>${f.questions.map(q=>'<li>'+q+'</li>').join('')}</ol><details><summary>이 답이 나오면 이렇게 이어 묻기</summary>${f.branches.map(b=>'<p class="branch"><strong>'+b.when+'</strong><br>'+b.ask+'</p>').join('')}</details></section>`).join('')}</section><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div>${c.note?'<div class="field-note">'+c.note+'</div>':''}`;
 c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===route[0];$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 질문':location.items.includes(route[route.indexOf(i)+1])?'다음 이야기 →':'다음 장소 →';decorateQuestions();decorateCuts();progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
 $('memo').oninput=()=>{state.notes[state.index]=$('memo').value;save();};$('shotDone').onchange=()=>{state.shots[state.index]=$('shotDone').checked;save();};
 for(const [id,d] of [['prev',-1],['next',1]])$(id).onclick=()=>{state.index=route[Math.max(0,Math.min(route.length-1,route.indexOf(state.index)+d))];save();render();$('nav').scrollIntoView({block:'start'});};
