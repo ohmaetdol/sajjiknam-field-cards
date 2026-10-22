@@ -41,6 +41,13 @@ const cards=[
               1
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b0",
+          "q1",
+          "b1",
+          "b2"
         ]
       },
       {
@@ -75,6 +82,14 @@ const cards=[
               0
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b1",
+          "b3",
+          "q1",
+          "b0",
+          "b2"
         ]
       },
       {
@@ -109,6 +124,14 @@ const cards=[
               0
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b3",
+          "q1",
+          "b0",
+          "b1",
+          "b2"
         ]
       }
     ],
@@ -222,6 +245,15 @@ const cards=[
               2
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "q1",
+          "b4",
+          "b0",
+          "b1",
+          "b2",
+          "b3"
         ]
       },
       {
@@ -263,6 +295,15 @@ const cards=[
               3
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "q1",
+          "b0",
+          "b1",
+          "b2",
+          "b3",
+          "b4"
         ]
       },
       {
@@ -298,6 +339,14 @@ const cards=[
               1
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b0",
+          "q1",
+          "b1",
+          "b2",
+          "b3"
         ]
       },
       {
@@ -328,6 +377,13 @@ const cards=[
               0
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b0",
+          "q1",
+          "b1",
+          "b2"
         ]
       }
     ],
@@ -450,6 +506,12 @@ const cards=[
               1
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "q1",
+          "b0",
+          "b1"
         ]
       },
       {
@@ -481,6 +543,13 @@ const cards=[
               1
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b0",
+          "q1",
+          "b1",
+          "b2"
         ]
       },
       {
@@ -525,6 +594,16 @@ const cards=[
               2
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b0",
+          "b3",
+          "q1",
+          "b1",
+          "b4",
+          "b2",
+          "b5"
         ]
       }
     ],
@@ -632,6 +711,13 @@ const cards=[
               1
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b0",
+          "b1",
+          "b3",
+          "b2"
         ]
       },
       {
@@ -668,6 +754,15 @@ const cards=[
               1
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b0",
+          "q1",
+          "b3",
+          "q2",
+          "b1",
+          "b2"
         ]
       },
       {
@@ -703,6 +798,14 @@ const cards=[
               1
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b2",
+          "b1",
+          "q1",
+          "b0",
+          "b3"
         ]
       }
     ],
@@ -809,6 +912,13 @@ const cards=[
               1
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "q1",
+          "b0",
+          "b1",
+          "b2"
         ]
       },
       {
@@ -844,6 +954,15 @@ const cards=[
               0
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "q1",
+          "b0",
+          "b1",
+          "q2",
+          "b2",
+          "b3"
         ]
       },
       {
@@ -875,6 +994,13 @@ const cards=[
               1
             ]
           }
+        ],
+        "order": [
+          "q0",
+          "b0",
+          "b1",
+          "q1",
+          "b2"
         ]
       }
     ],
@@ -956,26 +1082,18 @@ function addQuestionCheck(el,i,q){
  input.onchange=()=>{state.questions[k]=input.checked;document.querySelectorAll('[data-question-key]').forEach(x=>{if(x.dataset.questionKey===k)x.checked=input.checked;});save();};
 }
 function decorateQuestions(){
- document.querySelectorAll('#question-review > section').forEach((section)=>{
- const i=Number(section.dataset.cardIndex),c=cards[i];if(!c)return;
- section.querySelectorAll('ol li').forEach((el,j)=>addQuestionCheck(el,i,c.flow.flatMap(f=>f.questions)[j]));
- section.querySelectorAll('.branch').forEach((el,j)=>addQuestionCheck(el,i,c.flow.flatMap(f=>f.branches)[j].ask));
- });
- const i=state.index,c=cards[i];
- document.querySelectorAll('#card .flow-block').forEach((block,n)=>{
- block.querySelectorAll('ol li').forEach((el,j)=>addQuestionCheck(el,i,c.flow[n].questions[j]));
- block.querySelectorAll('.branch').forEach((el,j)=>addQuestionCheck(el,i,c.flow[n].branches[j].ask));
- });
- 
- addQuestionCheck(document.querySelector('#card .rescue p'),i,c.back);
+ document.querySelectorAll('[data-flow-card]').forEach(el=>addQuestionCheck(el,Number(el.dataset.flowCard),el.dataset.ask));
+ const i=state.index;addQuestionCheck(document.querySelector('#card .rescue p'),i,cards[i].back);
  document.querySelectorAll('[data-question-key]').forEach(x=>{x.checked=!!state.questions[x.dataset.questionKey];});
 }
+function escapeQuestion(s){return s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');}
+function orderedQuestions(i,f){return '<ol class="conversation">'+f.order.map(k=>{const n=Number(k.slice(1)),b=k[0]==='b'?f.branches[n]:null,q=b?b.ask:f.questions[n];return '<li data-flow-card="'+i+'" data-ask="'+escapeQuestion(q)+'">'+escapeQuestion(q)+(b?'<small class="question-context">'+escapeQuestion(b.when)+' · 이미 들었으면 넘어가기</small>':'')+'</li>';}).join('')+'</ol>';}
 
 
 function fieldGuide(i,n){const refs=cards[i].flow[n].shotRefs||[];return `<section class="field-guide"><div class="eyebrow">먼저 찍고 → 아래 질문으로</div>${refs.map(ref=>{const g=cards[i].fieldGuide.find(g=>g.id===ref.id);return `<div class="cut-sequence"><p>${ref.action||g.action}</p>${ref.cuts.map(j=>`<label class="cut-check"><input type="checkbox" data-cut-key="${g.id}-${j}" aria-label="현장 컷 확보: ${g.cuts[j]}"><span>${g.cuts[j]}</span></label>`).join('')}</div>`;}).join('')}</section>`;}
 function decorateCuts(){document.querySelectorAll('[data-cut-key]').forEach(input=>{const k=input.dataset.cutKey;input.checked=!!state.fieldCuts[k];input.onchange=()=>{state.fieldCuts[k]=input.checked;document.querySelectorAll('[data-cut-key]').forEach(x=>{if(x.dataset.cutKey===k)x.checked=input.checked;});save();};});document.querySelectorAll('.cut-question').forEach(el=>addQuestionCheck(el,Number(el.dataset.card),el.dataset.ask));}
 
-function render(){const i=state.index,c=cards[i];const location=locations.find(l=>l.items.includes(i));$('nav').replaceChildren(...locations.map(l=>{const b=document.createElement('button');b.textContent=l.name;b.setAttribute('aria-current',l===location?'true':'false');b.onclick=()=>{state.index=l.items[0];save();render();$('nav').scrollIntoView({block:'start'});};return b;}));$('topics').replaceChildren(...(location.items.length>1?location.items.map(n=>{const b=document.createElement('button');b.textContent=cards[n].tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();};return b;}):[]));$('card').innerHTML=`<div class="number">장소 ${locations.indexOf(location)+1} / ${locations.length} · ${location.name}</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">먼저 볼 상황</div><p>${c.goal}</p></div><section class="main-questions">${c.flow.map((f,n)=>`<section class="flow-block"><h3>${n+1}. ${f.title}</h3><p class="scene-note">${f.scene}</p>${fieldGuide(i,n)}<div class="eyebrow">장면을 본 뒤 물어보기</div><ol>${f.questions.map(q=>'<li>'+q+'</li>').join('')}</ol><details><summary>이 답이 나오면 이렇게 이어 묻기</summary>${f.branches.map(b=>'<p class="branch"><strong>'+b.when+'</strong><br>'+b.ask+'</p>').join('')}</details></section>`).join('')}</section><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div>${c.note?'<div class="field-note">'+c.note+'</div>':''}`;
+function render(){const i=state.index,c=cards[i];const location=locations.find(l=>l.items.includes(i));$('nav').replaceChildren(...locations.map(l=>{const b=document.createElement('button');b.textContent=l.name;b.setAttribute('aria-current',l===location?'true':'false');b.onclick=()=>{state.index=l.items[0];save();render();$('nav').scrollIntoView({block:'start'});};return b;}));$('topics').replaceChildren(...(location.items.length>1?location.items.map(n=>{const b=document.createElement('button');b.textContent=cards[n].tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();};return b;}):[]));$('card').innerHTML=`<div class="number">장소 ${locations.indexOf(location)+1} / ${locations.length} · ${location.name}</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">먼저 볼 상황</div><p>${c.goal}</p></div><section class="main-questions">${c.flow.map((f,n)=>`<section class="flow-block"><h3>${n+1}. ${f.title}</h3><p class="scene-note">${f.scene}</p>${fieldGuide(i,n)}<div class="eyebrow">장면을 본 뒤 물어보기</div>${orderedQuestions(i,f)}</section>`).join('')}</section><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div>${c.note?'<div class="field-note">'+c.note+'</div>':''}`;
 c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===route[0];$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 질문':location.items.includes(route[route.indexOf(i)+1])?'다음 이야기 →':'다음 장소 →';decorateQuestions();decorateCuts();progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
 $('memo').oninput=()=>{state.notes[state.index]=$('memo').value;save();};$('shotDone').onchange=()=>{state.shots[state.index]=$('shotDone').checked;save();};
 for(const [id,d] of [['prev',-1],['next',1]])$(id).onclick=()=>{state.index=route[Math.max(0,Math.min(route.length-1,route.indexOf(state.index)+d))];save();render();$('nav').scrollIntoView({block:'start'});};
