@@ -420,6 +420,33 @@ const cards=[
       "저녁은 드셨어요?",
       "수업 있는 날은 보통 저녁을 언제 드세요?",
       "집에 오시면 보통 뭐부터 하세요?"
+    ],
+    "fieldGuide": [
+      {
+        "id": "songhee-3-1",
+        "title": "퇴근해서 집으로",
+        "heard": "오늘 저녁 일정과 귀가 방법을 들었으면",
+        "action": "걷기 → 실제 이동 수단 → 집에 도착하는 흐름을 따라간다. 이동을 설명시키느라 걸음을 멈추게 하지 않는다.",
+        "cuts": [
+          "회사 밖에서 걸어 나오는 모습과 주변 공간",
+          "이동하거나 기다리는 모습의 시작과 끝",
+          "현관에서 들어가 가방을 내려놓는 실제 행동"
+        ],
+        "when": "집에 도착해 첫 행동을 본 뒤",
+        "ask": "집에 오시면 보통 뭐부터 하세요?"
+      },
+      {
+        "id": "songhee-3-2",
+        "title": "저녁과 준비 사이",
+        "heard": "식사나 수업 준비를 한다고 하면",
+        "action": "실제로 하는 순서대로 찍는다. 식사를 안 하면 식사 컷은 건너뛰고, 바쁘게 보이려고 행동을 다시 시키지 않는다.",
+        "cuts": [
+          "실제 식사 또는 준비하는 모습과 손",
+          "먹거나 준비하던 일을 마치고 자리에서 옮겨가는 모습"
+        ],
+        "when": "그 행동을 마치고 여유가 생기면",
+        "ask": "이제 수업 시작하기 전까지 뭘 더 해야 해요?"
+      }
     ]
   },
   {
@@ -843,6 +870,58 @@ const cards=[
       "그달 수업으로 들어온 돈은 얼마예요?",
       "그달이 평소와 비슷한 달이에요, 많이 벌었던 달이에요?",
       "집에서 하는 일은 수업이 전부예요, 또 다른 일도 있으세요?"
+    ],
+    "fieldGuide": [
+      {
+        "id": "songhee-4-1",
+        "title": "학생 이야기에서 자료로",
+        "heard": "오늘 학생이 무엇을 배우려는지 들었으면",
+        "action": "자료를 펼친 전체 모습에서 시작해 실제로 고치는 부분과 손을 담는다. 중요한 동작은 끝까지 받고, 구도를 바꾸느라 놓치지 않는다.",
+        "cuts": [
+          "책상에 앉아 자료를 준비하는 모습",
+          "학생에 맞춰 실제로 준비하거나 수정한 부분"
+        ],
+        "when": "자료를 준비한 이유를 물을 때",
+        "ask": "오늘 학생 때문에 따로 준비하신 부분이 있어요?"
+      },
+      {
+        "id": "songhee-4-2",
+        "title": "설명하는 모습만 찍지 않기",
+        "heard": "준비가 끝나고 실제 수업이 시작되면",
+        "action": "PD 질문은 쉬고 수업을 따라간다. 설명하는 순간뿐 아니라 학생 말을 듣고 기다렸다가 답하는 흐름도 담는다. 학생 화면·음성은 동의 범위에서만 찍는다.",
+        "cuts": [
+          "헤드셋을 쓰고 수업에 들어가는 모습",
+          "설명하는 표정과 자료를 짚는 손",
+          "학생 말을 듣고 반응하는 모습"
+        ],
+        "when": "수업이 끝나고 실제로 본 장면을 짚으며",
+        "ask": "방금 수업에서 학생이 제일 어려워했던 게 뭐였어요?"
+      },
+      {
+        "id": "songhee-4-3",
+        "title": "끝난 수업에서 남은 일로",
+        "heard": "수업이 끝났다고 하면",
+        "action": "바로 다음 질문을 쏟지 말고 헤드셋을 벗은 뒤 무엇을 하는지 본다. 피드백을 보낸다면 작성부터 전송·종료까지 따라간다. 내용은 공개 가능한 부분만 담는다.",
+        "cuts": [
+          "수업을 종료하고 헤드셋을 벗는 모습",
+          "실제로 남은 피드백·연락·예약 업무",
+          "남은 작업을 끝내는 손과 표정"
+        ],
+        "when": "남은 일이 있었는지 본 뒤",
+        "ask": "수업은 끝났는데, 이제 더 해야 하는 일이 있어요?"
+      },
+      {
+        "id": "songhee-4-4",
+        "title": "일한 시간을 본 다음 수업료",
+        "heard": "준비와 수업 후 업무까지 걸린 시간을 들었으면",
+        "action": "방금 찍은 준비·수업·후속 업무가 수업료 질문 앞에 놓일 장면이다. 정산 화면이 있으면 같은 기간인지 확인하고 개인정보를 가린다.",
+        "cuts": [
+          "한 번의 수업에 들어간 일이 보이는 준비·진행·마무리 컷 확인",
+          "공개 가능한 정산 근거가 있으면 해당 금액과 기간"
+        ],
+        "when": "일의 양을 이해한 다음",
+        "ask": "오늘 같은 수업은 한 번에 얼마를 받으세요?"
+      }
     ]
   },
   {
@@ -1060,6 +1139,32 @@ const cards=[
       "반대로 이 일을 하느라 줄이거나 못 하게 된 것도 있어요?",
       "좋아진 것도 있고 못 하는 것도 생겼는데, 앞으로도 지금처럼 두 일을 같이 하고 싶으세요?",
       "그렇게 하려면 지금 생활에서 어떤 게 바뀌어야 할까요?"
+    ],
+    "fieldGuide": [
+      {
+        "id": "songhee-5-1",
+        "title": "일하는 자리에서 쉬는 자리로",
+        "heard": "오늘 할 일이 끝났다고 하면",
+        "action": "의자에서 일어나 물을 마시거나 쉬는 곳으로 가는 실제 행동을 따라간다. 산책은 원래 하거나 본인이 원할 때만. 피곤한 표정을 요구하지 않는다.",
+        "cuts": [
+          "작업 자리에서 벗어나 쉬는 곳으로 이동",
+          "말하지 않고 쉬는 자연스러운 모습"
+        ],
+        "when": "편하게 자리를 잡은 뒤",
+        "ask": "수업 없는 저녁에는 보통 뭐 하세요?"
+      },
+      {
+        "id": "songhee-5-2",
+        "title": "오늘 생활을 보고 선택을 묻기",
+        "heard": "좋아진 점과 포기한 시간을 들었으면",
+        "action": "깊은 답변 중에는 무리하게 손이나 풍경으로 카메라를 돌리지 않는다. 표정과 말끝을 담고, 대화가 끝난 틈에 공간이나 걷는 모습을 따로 확보한다.",
+        "cuts": [
+          "중요한 답을 하는 표정과 답이 끝난 뒤 반응",
+          "대화 사이 실제 휴식이나 걷는 모습"
+        ],
+        "when": "오늘 본 생활과 들은 답을 연결해",
+        "ask": "앞으로도 지금처럼 회사와 수업을 같이 하고 싶으세요?"
+      }
     ]
   },
   {
@@ -1097,13 +1202,28 @@ const cards=[
         ]
       }
     ],
-    "main": []
+    "main": [],
+    "fieldGuide": [
+      {
+        "id": "songhee-6-1",
+        "title": "말로 끝내지 않고 하루를 마치기",
+        "heard": "내일 기상 시각과 일정을 들었으면",
+        "action": "정리 → 실제 종료 → 인사를 담는다. 컴퓨터를 다시 켜거나 불을 여러 번 끄게 하지 않는다. 실제 잠드는 장면은 요구하지 않는다.",
+        "cuts": [
+          "실제로 하는 책상 정리나 컴퓨터 종료",
+          "내일 일정·알람을 확인한다면 그 손동작",
+          "현관에서 인사하며 촬영을 마치는 모습"
+        ],
+        "when": "내일도 수업이 있다는 답을 들었을 때만",
+        "ask": "내일 수업 준비는 오늘 해놓으신 거예요, 내일 다시 하세요?"
+      }
+    ]
   }
 ];
 const locations=[{"name": "퇴근길·첫 만남", "items": [3]}, {"name": "집·수업 자리", "items": [4]}, {"name": "수업 후 집 / 밤 산책", "items": [5]}, {"name": "취침 준비", "items": [6]}];
 const route=locations.flatMap(l=>l.items);
-const key='sajjiknam-songhee-field-v1';let state={checks:{},notes:{},shots:{},questions:{},index:route[0]};let storageOK=true;
-try{const x=JSON.parse(localStorage.getItem(key)||'null');if(x&&typeof x==='object'){state.questions=x.questions||{};state.checks=x.checks||{};state.notes=x.notes||{};state.shots=x.shots||{};state.index=route.includes(x.index)?x.index:route[0];}}catch(e){storageOK=false;}
+const key='sajjiknam-songhee-field-v1';let state={checks:{},notes:{},shots:{},questions:{},fieldCuts:{},index:route[0]};let storageOK=true;
+try{const x=JSON.parse(localStorage.getItem(key)||'null');if(x&&typeof x==='object'){state.questions=x.questions||{};state.fieldCuts=x.fieldCuts||{};state.checks=x.checks||{};state.notes=x.notes||{};state.shots=x.shots||{};state.index=route.includes(x.index)?x.index:route[0];}}catch(e){storageOK=false;}
 const $=id=>document.getElementById(id);const count=route.reduce((n,i)=>n+cards[i].answers.length,0);
 function save(){try{localStorage.setItem(key,JSON.stringify(state));storageOK=true;}catch(e){storageOK=false;}$('save').textContent=storageOK?'이 브라우저에 자동 저장':'저장 불가 · 기록을 내려받아 주세요';}
 function progress(){let n=0;route.forEach(i=>cards[i].answers.forEach((_,j)=>{if(state.checks[i+'-'+j])n++;}));$('total').textContent=`들은 내용 ${n} / ${count}`;$('progress').max=count;$('progress').value=n;const c=cards[state.index];const missing=c.answers.filter((_,j)=>!state.checks[state.index+'-'+j]);$('missing').textContent=missing.length?'더 물어볼 것: '+missing.join(' / '):'이 부분은 다 들었어요.';}
@@ -1133,9 +1253,13 @@ function decorateQuestions(){
  document.querySelectorAll('[data-question-key]').forEach(x=>{x.checked=!!state.questions[x.dataset.questionKey];});
 }
 
-function render(){const i=state.index,c=cards[i];const location=locations.find(l=>l.items.includes(i));$('nav').replaceChildren(...locations.map(l=>{const b=document.createElement('button');b.textContent=l.name;b.setAttribute('aria-current',l===location?'true':'false');b.onclick=()=>{state.index=l.items[0];save();render();$('nav').scrollIntoView({block:'start'});};return b;}));$('topics').replaceChildren(...(location.items.length>1?location.items.map(n=>{const b=document.createElement('button');b.textContent=cards[n].tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();};return b;}):[]));$('card').innerHTML=`<div class="number">장소 ${locations.indexOf(location)+1} / ${locations.length} · ${location.name}</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">먼저 볼 상황</div><p>${c.goal}</p></div><div class="question"><div class="eyebrow">상황이 보인 뒤 첫 질문</div><p>“${c.q}”</p></div><section class="main-questions">${c.flow.map((f,n)=>`<section class="flow-block"><h3>${n+1}. ${f.title}</h3><p class="scene-note">${f.scene}</p><ol>${f.questions.map(q=>'<li>'+q+'</li>').join('')}</ol><details><summary>이 답이 나오면 이렇게 이어 묻기</summary>${f.branches.map(b=>'<p class="branch"><strong>'+b.when+'</strong><br>'+b.ask+'</p>').join('')}</details></section>`).join('')}</section><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div>${c.note?'<div class="field-note">'+c.note+'</div>':''}`;
-c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===route[0];$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 질문':location.items.includes(route[route.indexOf(i)+1])?'다음 이야기 →':'다음 장소 →';decorateQuestions();progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
+
+function fieldGuide(i){return `<section class="field-guide"><div class="eyebrow">질문 전에 · 현장 컷</div><h3>말을 듣고, 행동을 따라 찍기</h3><p class="scene-note">일하면서 하는 대화는 살리기. 놓치면 끝나는 동작은 먼저 찍고 다음 질문은 서두르지 않기. 실제로 없는 행동은 건너뛰세요.</p>${(cards[i].fieldGuide||[]).map(g=>`<div class="cut-sequence"><h4>${g.title}</h4><p><span class="cut-tag">들은 말</span>${g.heard}</p><p><span class="cut-tag">찍을 행동</span>${g.action}</p>${g.cuts.map((cut,j)=>`<label class="cut-check"><input type="checkbox" data-cut-key="${g.id}-${j}" aria-label="현장 컷 확보: ${cut}"><span>${cut}</span></label>`).join('')}<p class="scene-note">${g.when}</p><p class="cut-question" data-card="${i}" data-ask="${g.ask}">${g.ask}</p></div>`).join('')}<p class="scene-note">확인한 휴먼스토리 장면의 역할을 송희님 동선에 적용한 촬영안입니다. 원본의 무음·현장음 길이를 복제한 지침은 아닙니다.</p></section>`;}
+function decorateCuts(){document.querySelectorAll('[data-cut-key]').forEach(input=>{const k=input.dataset.cutKey;input.checked=!!state.fieldCuts[k];input.onchange=()=>{state.fieldCuts[k]=input.checked;document.querySelectorAll('[data-cut-key]').forEach(x=>{if(x.dataset.cutKey===k)x.checked=input.checked;});save();};});document.querySelectorAll('.cut-question').forEach(el=>addQuestionCheck(el,Number(el.dataset.card),el.dataset.ask));}
+
+function render(){const i=state.index,c=cards[i];const location=locations.find(l=>l.items.includes(i));$('nav').replaceChildren(...locations.map(l=>{const b=document.createElement('button');b.textContent=l.name;b.setAttribute('aria-current',l===location?'true':'false');b.onclick=()=>{state.index=l.items[0];save();render();$('nav').scrollIntoView({block:'start'});};return b;}));$('topics').replaceChildren(...(location.items.length>1?location.items.map(n=>{const b=document.createElement('button');b.textContent=cards[n].tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();};return b;}):[]));$('card').innerHTML=`<div class="number">장소 ${locations.indexOf(location)+1} / ${locations.length} · ${location.name}</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">먼저 볼 상황</div><p>${c.goal}</p></div>${fieldGuide(i)}<div class="question"><div class="eyebrow">상황이 보인 뒤 첫 질문</div><p>“${c.q}”</p></div><section class="main-questions">${c.flow.map((f,n)=>`<section class="flow-block"><h3>${n+1}. ${f.title}</h3><p class="scene-note">${f.scene}</p><ol>${f.questions.map(q=>'<li>'+q+'</li>').join('')}</ol><details><summary>이 답이 나오면 이렇게 이어 묻기</summary>${f.branches.map(b=>'<p class="branch"><strong>'+b.when+'</strong><br>'+b.ask+'</p>').join('')}</details></section>`).join('')}</section><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div>${c.note?'<div class="field-note">'+c.note+'</div>':''}`;
+c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===route[0];$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 질문':location.items.includes(route[route.indexOf(i)+1])?'다음 이야기 →':'다음 장소 →';decorateQuestions();decorateCuts();progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
 $('memo').oninput=()=>{state.notes[state.index]=$('memo').value;save();};$('shotDone').onchange=()=>{state.shots[state.index]=$('shotDone').checked;save();};
 for(const [id,d] of [['prev',-1],['next',1]])$(id).onclick=()=>{state.index=route[Math.max(0,Math.min(route.length-1,route.indexOf(state.index)+d))];save();render();$('nav').scrollIntoView({block:'start'});};
-$('export').onclick=()=>{let text='# 송희님 편 현장 기록\n\n'+new Date().toLocaleString('ko-KR')+'\n';route.forEach(i=>{const c=cards[i];text+='\n### 질문 체크 · '+c.title+'\n'+[...new Set(c.flow.flatMap(f=>[...f.questions,...f.branches.map(b=>b.ask)]).concat(c.back))].map(q=>'- ['+(state.questions[questionKey(i,q)]?'x':' ')+'] '+q).join('\n')+'\n';text+='\n## '+locations.find(l=>l.items.includes(i)).name+' · '+c.title+'\n먼저 볼 상황: '+c.goal+'\n'+c.answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n- ['+(state.shots[i]?'x':' ')+'] 화면 확보\n\n메모: '+(state.notes[i]||'없음')+'\n';});route.forEach(i=>{const current=new Set([...cards[i].flow.flatMap(f=>[...f.questions,...f.branches.map(b=>b.ask)]),cards[i].q,cards[i].back]);const previous=Object.entries(state.questions).filter(([k,v])=>v&&k.startsWith(i+':')&&!current.has(k.slice(k.indexOf(':')+1)));if(previous.length)text+='\n## 이전 질문 체크 · '+cards[i].tab+'\n'+previous.map(([k])=>'- [x] '+k.slice(k.indexOf(':')+1)).join('\n')+'\n';});[0,1,2].forEach(i=>{if(state.notes[i]||state.shots[i]||Object.keys(state.checks).some(k=>k.startsWith(i+'-')&&state.checks[k])||Object.keys(state.questions).some(k=>k.startsWith(i+':')&&state.questions[k])){text+='\n## 이전 동선 기록 · '+cards[i].tab+'\n메모: '+(state.notes[i]||'없음')+'\n'+cards[i].answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n'+Object.entries(state.questions).filter(([k,v])=>k.startsWith(i+':')&&v).map(([k])=>'- [x] '+k.slice(k.indexOf(':')+1)).join('\n')+'\n화면 확보: '+!!state.shots[i]+'\n';}});const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='송희님_촬영기록.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
-$('reset').onclick=()=>$('resetDialog').showModal();$('cancelReset').onclick=()=>$('resetDialog').close();$('confirmReset').onclick=()=>{state={checks:{},notes:{},shots:{},questions:{},index:route[0]};save();render();$('resetDialog').close();};render();save();
+$('export').onclick=()=>{let text='# 송희님 편 현장 기록\n\n'+new Date().toLocaleString('ko-KR')+'\n';route.forEach(i=>{const c=cards[i];text+='\n### 현장 컷 · '+c.title+'\n'+(c.fieldGuide||[]).map(g=>g.title+'\n들은 말: '+g.heard+'\n찍을 행동: '+g.action+'\n'+g.cuts.map((cut,j)=>'- ['+(state.fieldCuts[g.id+'-'+j]?'x':' ')+'] '+cut).join('\n')+'\n다음 질문: ['+(state.questions[questionKey(i,g.ask)]?'x':' ')+'] '+g.ask).join('\n\n')+'\n';text+='\n### 질문 체크 · '+c.title+'\n'+[...new Set(c.flow.flatMap(f=>[...f.questions,...f.branches.map(b=>b.ask)]).concat(c.back))].map(q=>'- ['+(state.questions[questionKey(i,q)]?'x':' ')+'] '+q).join('\n')+'\n';text+='\n## '+locations.find(l=>l.items.includes(i)).name+' · '+c.title+'\n먼저 볼 상황: '+c.goal+'\n'+c.answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n- ['+(state.shots[i]?'x':' ')+'] 화면 확보\n\n메모: '+(state.notes[i]||'없음')+'\n';});route.forEach(i=>{const current=new Set([...cards[i].flow.flatMap(f=>[...f.questions,...f.branches.map(b=>b.ask)]),cards[i].q,cards[i].back]);const previous=Object.entries(state.questions).filter(([k,v])=>v&&k.startsWith(i+':')&&!current.has(k.slice(k.indexOf(':')+1)));if(previous.length)text+='\n## 이전 질문 체크 · '+cards[i].tab+'\n'+previous.map(([k])=>'- [x] '+k.slice(k.indexOf(':')+1)).join('\n')+'\n';});[0,1,2].forEach(i=>{if(state.notes[i]||state.shots[i]||Object.keys(state.checks).some(k=>k.startsWith(i+'-')&&state.checks[k])||Object.keys(state.questions).some(k=>k.startsWith(i+':')&&state.questions[k])){text+='\n## 이전 동선 기록 · '+cards[i].tab+'\n메모: '+(state.notes[i]||'없음')+'\n'+cards[i].answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n'+Object.entries(state.questions).filter(([k,v])=>k.startsWith(i+':')&&v).map(([k])=>'- [x] '+k.slice(k.indexOf(':')+1)).join('\n')+'\n화면 확보: '+!!state.shots[i]+'\n';}});const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='송희님_촬영기록.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+$('reset').onclick=()=>$('resetDialog').showModal();$('cancelReset').onclick=()=>$('resetDialog').close();$('confirmReset').onclick=()=>{state={checks:{},notes:{},shots:{},questions:{},fieldCuts:{},index:route[0]};save();render();$('resetDialog').close();};render();save();
