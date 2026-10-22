@@ -248,44 +248,66 @@ const cards=[
     ]
   },
   {
-    "tab": "퇴근길·집 도착",
-    "title": "퇴근길·집 도착 — 이제 회사 밖의 일로",
-    "q": "오늘 하루 어떠셨어요?",
-    "goal": "저녁빛, 회사 밖에서 다시 만나는 순간, 이동과 오늘 수업 일정 확인. 귀가 중 장보기가 실제로 필요하고 시간이 되면 따라간다. 배달을 막거나 일부러 장보게 하지 않는다.",
+    "tab": "퇴근길·첫 만남",
+    "title": "퇴근길·첫 만남 — 회사 밖에서는 어떤 하루일까",
+    "q": "지금 퇴근하시는 거예요?",
+    "goal": "회사 밖에서 처음 만난다. 실제 퇴근 시각과 귀가 동선을 따라가며 어떤 일을 하는 사람인지 알아간다. 회사 내부는 촬영하지 않는다. 집에 가서 무엇을 하는지는 답을 듣고 이어 묻는다.",
     "answers": [
       "부업을 찾게 된 실제 계기와 처음 한 행동",
-      "오늘 수업 일정, 식사·준비·이동에 쓰는 시간"
+      "오늘 수업 일정, 식사·준비·이동에 쓰는 시간",
+      "현재 회사에서 하는 일과 근무시간",
+      "퇴근 후 수업의 대상·내용과 실제 귀가 방식"
     ],
     "back": "오늘 첫 수업까지 얼마나 남았어요? 그전에 뭘 해야 해요?",
     "follow": [
-      "바로 수업 준비를 한다면: 첫 수업까지 얼마나 남았어요? 그전에 뭘 해야 해요?",
-      "장보기가 필요하다면: 오늘은 뭘 해 드실 거예요? 보통 이 시간에 준비하세요?",
+      "오늘 퇴근 시간을 이야기하면: 평소에도 이 시간에 끝나세요? 오늘은 몇 시부터 일하신 거예요?",
+      "회사 일을 소개하면: 그 일은 얼마나 하셨어요? 오늘은 어떤 하루였어요?",
+      "바로 집에 간다고 하면: 집에 가시면 보통 어떻게 보내세요?",
+      "집에서 수업한다고 하면: 어떤 분들에게 뭘 가르치시는 거예요? 오늘도 수업이 있어요?",
+      "귀가 시간이 길다면: 이동할 때는 주로 뭐 하세요? 오늘도 그렇게 보내실 거예요?",
       "쉬고 싶다고 했는데 집에서 바로 일을 시작하면: 아까는 좀 쉬고 싶다고 하셨는데, 지금 먼저 해야 하는 일이 있어요?",
       "월급만으로 부족했다고 하면: 어떤 순간에 그렇게 느끼셨어요? 당시 가장 부담됐던 게 뭐였어요?",
       "계약이나 고용을 걱정했다면: 그 이후를 위해 어떤 준비를 하고 싶으셨어요?",
       "여러 일을 알아봤다면: 그중 지금 하는 일을 고른 이유가 뭐예요?",
       "퇴근 시간이 유동적이라면: 예약은 얼마나 여유를 두고 받아요? 실제로 시간이 겹쳤던 날은 어떻게 해결했어요?",
       "밥을 급하게 먹거나 건너뛴다면: 오늘만 이런 거예요, 수업 있는 날은 자주 이래요? 식사할 시간을 만들려고 바꿔본 게 있어요?",
-      "쉬고 싶은데 예약이 있다면: 그럴 때도 수업을 하게 되는 이유는 뭐예요? 쉬는 날을 따로 정해두셨나요?"
+      "쉬고 싶은데 예약이 있다면: 그럴 때도 수업을 하게 되는 이유는 뭐예요? 쉬는 날을 따로 정해두셨나요?",
+      "직접 준비한 음식을 먹는다면: 언제 준비하셨어요? 보통 이렇게 미리 챙겨두세요?",
+      "가격을 신경 쓴다고 하면: 한 달 식비는 대략 어느 정도예요? 다른 데서는 어떤 돈을 아끼세요?",
+      "생활비를 줄이고 있다고 하면: 월급이 들어오면 꼭 먼저 나가는 돈이 뭐예요? 아끼고 싶어도 줄이기 어려운 항목은요?",
+      "외식을 줄였다면: 예전에는 얼마나 쓰셨어요? 줄이고 보니 불편한 점도 있어요?"
     ],
-    "shot": "실제 시각, 귀가 동선, 필요한 장보기·가격 비교·계산, 식사와 준비. 쉬고 싶은 날에는 어떻게 조절했는지도 답변에 따라 묻는다.",
+    "shot": "회사 밖 첫 만남, 실제 퇴근 시각, 귀가 동선, 집 도착과 수업 준비. 장보기·저녁 식사는 실제로 하는 경우에만 담는다.",
     "note": "상황을 먼저 보고, 궁금해질 때 묻기. 이미 들은 답은 다시 묻지 않기.",
     "flow": [
       {
-        "title": "퇴근하고 다시 만난 순간",
-        "scene": "회사 밖에서 다시 만나 저녁빛과 실제 시각을 남긴다.",
+        "title": "퇴근길에서 처음 만나다",
+        "scene": "회사 밖에서 인사를 나눈 뒤 걷기 시작한다. 이름 소개는 짧게 받고, 일과 저녁 일정은 아직 모르는 입장에서 묻는다.",
         "questions": [
-          "오늘 하루 어떠셨어요?",
+          "지금 퇴근하시는 거예요?",
+          "회사에서는 어떤 일을 하세요?",
           "지금은 바로 집으로 가세요?"
         ],
         "branches": [
           {
-            "when": "바로 수업 준비를 한다면",
-            "ask": "첫 수업까지 얼마나 남았어요? 그전에 뭘 해야 해요?"
+            "when": "오늘 퇴근 시간을 이야기하면",
+            "ask": "평소에도 이 시간에 끝나세요? 오늘은 몇 시부터 일하신 거예요?"
           },
           {
-            "when": "장보기가 필요하다면",
-            "ask": "오늘은 뭘 해 드실 거예요? 보통 이 시간에 준비하세요?"
+            "when": "회사 일을 소개하면",
+            "ask": "그 일은 얼마나 하셨어요? 오늘은 어떤 하루였어요?"
+          },
+          {
+            "when": "바로 집에 간다고 하면",
+            "ask": "집에 가시면 보통 어떻게 보내세요?"
+          },
+          {
+            "when": "집에서 수업한다고 하면",
+            "ask": "어떤 분들에게 뭘 가르치시는 거예요? 오늘도 수업이 있어요?"
+          },
+          {
+            "when": "귀가 시간이 길다면",
+            "ask": "이동할 때는 주로 뭐 하세요? 오늘도 그렇게 보내실 거예요?"
           },
           {
             "when": "쉬고 싶다고 했는데 집에서 바로 일을 시작하면",
@@ -295,7 +317,7 @@ const cards=[
       },
       {
         "title": "퇴근 후 일을 시작한 이유",
-        "scene": "귀가 중 여유가 있을 때. 자세한 방법은 수업 자리에서 듣는다.",
+        "scene": "회사 밖에서도 일한다는 답을 들은 뒤에만 묻는다. 귀가 중에는 시작 계기만 듣고 구체적인 방법은 실제 수업 자리에서 이어간다.",
         "questions": [
           "회사 다니면서 다른 일도 해봐야겠다고 생각한 계기가 있었어요?",
           "그때 제일 먼저 뭘 해보셨어요?"
@@ -317,7 +339,7 @@ const cards=[
       },
       {
         "title": "첫 수업까지 남은 시간",
-        "scene": "귀가 후 예약 시각과 실제 시각을 함께 본다. 식사와 준비를 방해하지 않는다.",
+        "scene": "오늘 수업이 있다는 답을 들었을 때 예약 시각과 실제 시각을 확인한다. 수업이 없는 날이면 실제 남은 업무를 따라가며 수업을 재연하지 않는다.",
         "questions": [
           "오늘 첫 수업까지 얼마나 남았어요? 그전에 뭘 해야 해요?",
           "회사에서 늦게 끝나는 날에는 수업 시간을 어떻게 맞추세요?"
@@ -336,14 +358,41 @@ const cards=[
             "ask": "그럴 때도 수업을 하게 되는 이유는 뭐예요? 쉬는 날을 따로 정해두셨나요?"
           }
         ]
+      },
+      {
+        "title": "저녁을 챙기는 시간이 있다면",
+        "scene": "실제로 장을 보거나 저녁을 먹을 때만 묻는다. 촬영을 위해 식사나 절약 장면을 만들지 않는다.",
+        "questions": [
+          "수업 있는 날 저녁은 보통 어떻게 챙겨 드세요?"
+        ],
+        "branches": [
+          {
+            "when": "직접 준비한 음식을 먹는다면",
+            "ask": "언제 준비하셨어요? 보통 이렇게 미리 챙겨두세요?"
+          },
+          {
+            "when": "가격을 신경 쓴다고 하면",
+            "ask": "한 달 식비는 대략 어느 정도예요? 다른 데서는 어떤 돈을 아끼세요?"
+          },
+          {
+            "when": "생활비를 줄이고 있다고 하면",
+            "ask": "월급이 들어오면 꼭 먼저 나가는 돈이 뭐예요? 아끼고 싶어도 줄이기 어려운 항목은요?"
+          },
+          {
+            "when": "외식을 줄였다면",
+            "ask": "예전에는 얼마나 쓰셨어요? 줄이고 보니 불편한 점도 있어요?"
+          }
+        ]
       }
     ],
     "main": [
+      "회사에서는 어떤 일을 하세요?",
       "지금은 바로 집으로 가세요?",
       "회사 다니면서 다른 일도 해봐야겠다고 생각한 계기가 있었어요?",
       "그때 제일 먼저 뭘 해보셨어요?",
       "오늘 첫 수업까지 얼마나 남았어요? 그전에 뭘 해야 해요?",
-      "회사에서 늦게 끝나는 날에는 수업 시간을 어떻게 맞추세요?"
+      "회사에서 늦게 끝나는 날에는 수업 시간을 어떻게 맞추세요?",
+      "수업 있는 날 저녁은 보통 어떻게 챙겨 드세요?"
     ]
   },
   {
@@ -653,11 +702,17 @@ const cards=[
       "뿌듯하다고 하면: 오늘 특히 잘했다고 느낀 순간이 있었어요?",
       "지치거나 허무하다고 하면: 그런 날에는 어떻게 쉬세요? 일정을 줄여본 적도 있어요?",
       "성취감과 피곤함을 함께 말하면: 같은 하루인데도 괜찮았던 날과 유난히 힘들었던 날이 달랐을 것 같아요. 최근에는 어떤 날이 기억나세요?",
+      "쉬는 시간을 이야기하면: 요즘 쉬는 시간에는 뭘 즐겨 하세요? 일을 시작하고 그 시간이 달라졌어요?",
+      "다른 꿈을 준비했다고 하면: 어떤 점 때문에 그 일을 하고 싶으셨어요? 준비하면서 하루를 어떻게 보내셨어요?",
+      "오랫동안 준비했다고 하면: 계속해보자는 마음과 다른 일을 해보자는 마음 사이에서 언제 결정을 내리셨어요?",
+      "준비를 그만뒀다고 하면: 그다음에는 무엇부터 하셨어요? 바로 다른 일을 시작할 수 있었어요?",
+      "여러 직장이나 아르바이트를 거쳤다면: 그 일을 해보니 생각과 뭐가 달랐어요? 지금 일을 선택할 때 가장 중요하게 본 건 뭐였어요?",
       "걱정이 줄었다면: 최근에 그걸 느낀 일이 하나 있었어요?",
       "아직 크게 달라진 게 없다면: 그럼 지금은 어떤 이유로 계속하고 계세요?",
       "포기한 시간이 있다면: 그중 제일 아쉬운 건 뭐예요? 오래 하려면 어떤 부분을 바꿔야 할까요?",
       "자신감이 생겼다고 하면: 언제 처음 그렇게 느끼셨어요? 예전에는 망설였는데 지금은 해볼 수 있겠다고 생각하는 일이 있어요?",
       "바쁘게 살고 싶다고 하면: 일이 없는 저녁과 일을 마친 저녁은 본인에게 어떻게 달라요? 말하기 편한 만큼만 들려주세요.",
+      "저축이나 투자 이야기가 나오면: 돈이 들어오면 생활비와 모아둘 돈을 어떻게 나누세요? 그 방식을 택한 이유가 있어요?",
       "퇴사를 생각한다면: 어떤 조건이 갖춰지면 결정할 수 있을까요? 수입이 얼마 동안 이어져야 안심될 것 같아요?",
       "병행하고 싶다면: 두 일을 오래 같이 하려면 지금 가장 필요한 게 뭐예요?",
       "아직 모르겠다면: 당장 이번 달에는 지키고 싶은 게 하나 있어요?",
@@ -686,6 +741,36 @@ const cards=[
           {
             "when": "성취감과 피곤함을 함께 말하면",
             "ask": "같은 하루인데도 괜찮았던 날과 유난히 힘들었던 날이 달랐을 것 같아요. 최근에는 어떤 날이 기억나세요?"
+          },
+          {
+            "when": "쉬는 시간을 이야기하면",
+            "ask": "요즘 쉬는 시간에는 뭘 즐겨 하세요? 일을 시작하고 그 시간이 달라졌어요?"
+          }
+        ]
+      },
+      {
+        "title": "지금 하는 일까지 오게 된 이야기",
+        "scene": "오늘 수업을 충분히 본 뒤 쉬는 자리에서 묻는다. 퇴근길에 이미 들은 이야기는 반복하지 않는다. 예전 꿈이나 준비 과정은 본인이 꺼냈을 때만 이어간다.",
+        "questions": [
+          "지금 하시는 일이 첫 직장이에요?",
+          "원래부터 이 일을 하고 싶으셨어요?"
+        ],
+        "branches": [
+          {
+            "when": "다른 꿈을 준비했다고 하면",
+            "ask": "어떤 점 때문에 그 일을 하고 싶으셨어요? 준비하면서 하루를 어떻게 보내셨어요?"
+          },
+          {
+            "when": "오랫동안 준비했다고 하면",
+            "ask": "계속해보자는 마음과 다른 일을 해보자는 마음 사이에서 언제 결정을 내리셨어요?"
+          },
+          {
+            "when": "준비를 그만뒀다고 하면",
+            "ask": "그다음에는 무엇부터 하셨어요? 바로 다른 일을 시작할 수 있었어요?"
+          },
+          {
+            "when": "여러 직장이나 아르바이트를 거쳤다면",
+            "ask": "그 일을 해보니 생각과 뭐가 달랐어요? 지금 일을 선택할 때 가장 중요하게 본 건 뭐였어요?"
           }
         ]
       },
@@ -717,6 +802,10 @@ const cards=[
           {
             "when": "바쁘게 살고 싶다고 하면",
             "ask": "일이 없는 저녁과 일을 마친 저녁은 본인에게 어떻게 달라요? 말하기 편한 만큼만 들려주세요."
+          },
+          {
+            "when": "저축이나 투자 이야기가 나오면",
+            "ask": "돈이 들어오면 생활비와 모아둘 돈을 어떻게 나누세요? 그 방식을 택한 이유가 있어요?"
           }
         ]
       },
@@ -753,6 +842,8 @@ const cards=[
     ],
     "main": [
       "이렇게 하루를 보내고 나면 어떤 생각이 들어요?",
+      "지금 하시는 일이 첫 직장이에요?",
+      "원래부터 이 일을 하고 싶으셨어요?",
       "처음 수업료가 들어왔을 때 그 돈으로 뭐 하셨어요?",
       "추가 수입이 생기고 생활에서 달라진 게 있어요?",
       "회사를 다니며 받는 월급과, 직접 학생을 구해서 받은 돈은 느낌이 달랐어요?",
@@ -793,13 +884,13 @@ const cards=[
     "main": []
   }
 ];
-const locations=[{"name": "아침 집", "items": [0]}, {"name": "출근길·회사 입구", "items": [1]}, {"name": "점심 식사·산책", "items": [2]}, {"name": "퇴근길·집 도착", "items": [3]}, {"name": "집·수업 자리", "items": [4]}, {"name": "수업 후 집 / 밤 산책", "items": [5]}, {"name": "취침 준비", "items": [6]}];
+const locations=[{"name": "퇴근길·첫 만남", "items": [3]}, {"name": "집·수업 자리", "items": [4]}, {"name": "수업 후 집 / 밤 산책", "items": [5]}, {"name": "취침 준비", "items": [6]}];
 const route=locations.flatMap(l=>l.items);
-const key='sajjiknam-songhee-field-v1';let state={checks:{},notes:{},shots:{},questions:{},index:0};let storageOK=true;
-try{const x=JSON.parse(localStorage.getItem(key)||'null');if(x&&typeof x==='object'){state.questions=x.questions||{};state.checks=x.checks||{};state.notes=x.notes||{};state.shots=x.shots||{};state.index=Number.isInteger(x.index)&&x.index>=0&&x.index<cards.length?x.index:0;}}catch(e){storageOK=false;}
-const $=id=>document.getElementById(id);const count=cards.reduce((n,c)=>n+c.answers.length,0);
+const key='sajjiknam-songhee-field-v1';let state={checks:{},notes:{},shots:{},questions:{},index:route[0]};let storageOK=true;
+try{const x=JSON.parse(localStorage.getItem(key)||'null');if(x&&typeof x==='object'){state.questions=x.questions||{};state.checks=x.checks||{};state.notes=x.notes||{};state.shots=x.shots||{};state.index=route.includes(x.index)?x.index:route[0];}}catch(e){storageOK=false;}
+const $=id=>document.getElementById(id);const count=route.reduce((n,i)=>n+cards[i].answers.length,0);
 function save(){try{localStorage.setItem(key,JSON.stringify(state));storageOK=true;}catch(e){storageOK=false;}$('save').textContent=storageOK?'이 브라우저에 자동 저장':'저장 불가 · 기록을 내려받아 주세요';}
-function progress(){let n=0;cards.forEach((c,i)=>c.answers.forEach((_,j)=>{if(state.checks[i+'-'+j])n++;}));$('total').textContent=`들은 내용 ${n} / ${count}`;$('progress').max=count;$('progress').value=n;const c=cards[state.index];const missing=c.answers.filter((_,j)=>!state.checks[state.index+'-'+j]);$('missing').textContent=missing.length?'더 물어볼 것: '+missing.join(' / '):'이 부분은 다 들었어요.';}
+function progress(){let n=0;route.forEach(i=>cards[i].answers.forEach((_,j)=>{if(state.checks[i+'-'+j])n++;}));$('total').textContent=`들은 내용 ${n} / ${count}`;$('progress').max=count;$('progress').value=n;const c=cards[state.index];const missing=c.answers.filter((_,j)=>!state.checks[state.index+'-'+j]);$('missing').textContent=missing.length?'더 물어볼 것: '+missing.join(' / '):'이 부분은 다 들었어요.';}
 
 function questionKey(i,q){return i+':'+q;}
 function addQuestionCheck(el,i,q){
@@ -811,8 +902,8 @@ function addQuestionCheck(el,i,q){
  input.onchange=()=>{state.questions[k]=input.checked;document.querySelectorAll('[data-question-key]').forEach(x=>{if(x.dataset.questionKey===k)x.checked=input.checked;});save();};
 }
 function decorateQuestions(){
- document.querySelectorAll('#question-review > section').forEach((section,i)=>{
- const c=cards[i];if(!c)return;
+ document.querySelectorAll('#question-review > section').forEach((section)=>{
+ const i=Number(section.dataset.cardIndex),c=cards[i];if(!c)return;
  section.querySelectorAll('ol li').forEach((el,j)=>addQuestionCheck(el,i,c.flow.flatMap(f=>f.questions)[j]));
  section.querySelectorAll('.branch').forEach((el,j)=>addQuestionCheck(el,i,c.flow.flatMap(f=>f.branches)[j].ask));
  });
@@ -827,8 +918,8 @@ function decorateQuestions(){
 }
 
 function render(){const i=state.index,c=cards[i];const location=locations.find(l=>l.items.includes(i));$('nav').replaceChildren(...locations.map(l=>{const b=document.createElement('button');b.textContent=l.name;b.setAttribute('aria-current',l===location?'true':'false');b.onclick=()=>{state.index=l.items[0];save();render();$('nav').scrollIntoView({block:'start'});};return b;}));$('topics').replaceChildren(...(location.items.length>1?location.items.map(n=>{const b=document.createElement('button');b.textContent=cards[n].tab;b.setAttribute('aria-current',n===i?'true':'false');b.onclick=()=>{state.index=n;save();render();};return b;}):[]));$('card').innerHTML=`<div class="number">장소 ${locations.indexOf(location)+1} / ${locations.length} · ${location.name}</div><h2>${c.title}</h2><div class="goal"><div class="eyebrow">먼저 볼 상황</div><p>${c.goal}</p></div><div class="question"><div class="eyebrow">상황이 보인 뒤 첫 질문</div><p>“${c.q}”</p></div><section class="main-questions">${c.flow.map((f,n)=>`<section class="flow-block"><h3>${n+1}. ${f.title}</h3><p class="scene-note">${f.scene}</p><ol>${f.questions.map(q=>'<li>'+q+'</li>').join('')}</ol><details><summary>이 답이 나오면 이렇게 이어 묻기</summary>${f.branches.map(b=>'<p class="branch"><strong>'+b.when+'</strong><br>'+b.ask+'</p>').join('')}</details></section>`).join('')}</section><div class="check-title">들었으면 체크</div><div id="answers"></div><div class="rescue"><div class="eyebrow">다시 돌아올 질문</div><p>“${c.back}”</p></div>${c.note?'<div class="field-note">'+c.note+'</div>':''}`;
-c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===0;$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 질문':location.items.includes(route[route.indexOf(i)+1])?'다음 이야기 →':'다음 장소 →';decorateQuestions();progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
+c.answers.forEach((a,j)=>{const label=document.createElement('label');label.className='answer';const input=document.createElement('input');input.type='checkbox';input.checked=!!state.checks[i+'-'+j];input.onchange=()=>{state.checks[i+'-'+j]=input.checked;save();progress();};const span=document.createElement('span');span.textContent=a;label.append(input,span);$('answers').append(label);});$('shot').textContent='찍을 것: '+c.shot;$('shotDone').checked=!!state.shots[i];$('memo').value=state.notes[i]||'';$('prev').disabled=i===route[0];$('next').disabled=i===cards.length-1;$('next').textContent=i===cards.length-1?'마지막 질문':location.items.includes(route[route.indexOf(i)+1])?'다음 이야기 →':'다음 장소 →';decorateQuestions();progress();const active=$('nav').querySelector('[aria-current=true]'); $('nav').scrollLeft=Math.max(0,active.offsetLeft-60);}
 $('memo').oninput=()=>{state.notes[state.index]=$('memo').value;save();};$('shotDone').onchange=()=>{state.shots[state.index]=$('shotDone').checked;save();};
 for(const [id,d] of [['prev',-1],['next',1]])$(id).onclick=()=>{state.index=route[Math.max(0,Math.min(route.length-1,route.indexOf(state.index)+d))];save();render();$('nav').scrollIntoView({block:'start'});};
-$('export').onclick=()=>{let text='# 송희님 편 현장 기록\n\n'+new Date().toLocaleString('ko-KR')+'\n';route.forEach(i=>{const c=cards[i];text+='\n### 질문 체크 · '+c.title+'\n'+[...new Set(c.flow.flatMap(f=>[...f.questions,...f.branches.map(b=>b.ask)]).concat(c.back))].map(q=>'- ['+(state.questions[questionKey(i,q)]?'x':' ')+'] '+q).join('\n')+'\n';text+='\n## '+locations.find(l=>l.items.includes(i)).name+' · '+c.title+'\n먼저 볼 상황: '+c.goal+'\n'+c.answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n- ['+(state.shots[i]?'x':' ')+'] 화면 확보\n\n메모: '+(state.notes[i]||'없음')+'\n';});const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='송희님_촬영기록.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
-$('reset').onclick=()=>$('resetDialog').showModal();$('cancelReset').onclick=()=>$('resetDialog').close();$('confirmReset').onclick=()=>{state={checks:{},notes:{},shots:{},questions:{},index:0};save();render();$('resetDialog').close();};render();save();
+$('export').onclick=()=>{let text='# 송희님 편 현장 기록\n\n'+new Date().toLocaleString('ko-KR')+'\n';route.forEach(i=>{const c=cards[i];text+='\n### 질문 체크 · '+c.title+'\n'+[...new Set(c.flow.flatMap(f=>[...f.questions,...f.branches.map(b=>b.ask)]).concat(c.back))].map(q=>'- ['+(state.questions[questionKey(i,q)]?'x':' ')+'] '+q).join('\n')+'\n';text+='\n## '+locations.find(l=>l.items.includes(i)).name+' · '+c.title+'\n먼저 볼 상황: '+c.goal+'\n'+c.answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n- ['+(state.shots[i]?'x':' ')+'] 화면 확보\n\n메모: '+(state.notes[i]||'없음')+'\n';});[0,1,2].forEach(i=>{if(state.notes[i]||state.shots[i]||Object.keys(state.checks).some(k=>k.startsWith(i+'-')&&state.checks[k])||Object.keys(state.questions).some(k=>k.startsWith(i+':')&&state.questions[k])){text+='\n## 이전 동선 기록 · '+cards[i].tab+'\n메모: '+(state.notes[i]||'없음')+'\n'+cards[i].answers.map((a,j)=>'- ['+(state.checks[i+'-'+j]?'x':' ')+'] '+a).join('\n')+'\n'+Object.entries(state.questions).filter(([k,v])=>k.startsWith(i+':')&&v).map(([k])=>'- [x] '+k.slice(k.indexOf(':')+1)).join('\n')+'\n화면 확보: '+!!state.shots[i]+'\n';}});const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='송희님_촬영기록.md';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
+$('reset').onclick=()=>$('resetDialog').showModal();$('cancelReset').onclick=()=>$('resetDialog').close();$('confirmReset').onclick=()=>{state={checks:{},notes:{},shots:{},questions:{},index:route[0]};save();render();$('resetDialog').close();};render();save();
