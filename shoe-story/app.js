@@ -1,1 +1,13 @@
 const KEY='sajjiknam-shoe-story-v1';let state={};try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){state={}}if(!state||typeof state!=='object'||Array.isArray(state))state={};const fields=[...document.querySelectorAll('[data-key]')];const checks=fields.filter(e=>e.type==='checkbox');function progress(){const n=checks.filter(e=>e.checked).length;document.getElementById('progressText').textContent=`확인 ${n} / ${checks.length}`;document.getElementById('progress').value=n/checks.length*100}function save(){try{localStorage.setItem(KEY,JSON.stringify(state));document.getElementById('saveState').textContent='이 브라우저에 저장됨'}catch(e){document.getElementById('saveState').textContent='저장 불가 · 기록 내려받기를 이용해주세요'}}fields.forEach(e=>{if(e.type==='checkbox')e.checked=state[e.dataset.key]===true;else e.value=typeof state[e.dataset.key]==='string'?state[e.dataset.key]:'';e.addEventListener('input',()=>{state[e.dataset.key]=e.type==='checkbox'?e.checked:e.value;save();progress()})});progress();document.getElementById('export').onclick=()=>{const rows=fields.map(e=>({항목:e.type==='checkbox'?e.parentElement.innerText:e.closest('.card').querySelector('h2').innerText,기록:e.type==='checkbox'?e.checked:e.value}));const url=URL.createObjectURL(new Blob([JSON.stringify({회차:'수제화 대표',저장시각:new Date().toISOString(),기록:rows},null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='수제화대표_촬영기록.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};document.getElementById('reset').onclick=()=>{if(!confirm('이 브라우저의 수제화대표 촬영 체크와 메모를 모두 비울까요?'))return;state={};fields.forEach(e=>{if(e.type==='checkbox')e.checked=false;else e.value=''});save();progress()};
+const partLinks=[...document.querySelectorAll('nav a')];
+const parts=partLinks.map(a=>document.querySelector(a.getAttribute('href')));
+function showPart(){
+ const hash=location.hash||'#overview';
+ let index=partLinks.findIndex(a=>a.getAttribute('href')===hash);if(index<0)index=0;
+ parts.forEach((p,i)=>{p.hidden=i!==index});
+ partLinks.forEach((a,i)=>{a.classList.toggle('active',i===index);if(i===index)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+ document.getElementById('partPosition').textContent=`${index+1} / ${parts.length}`;
+ for(const [id,offset] of [['previousPart',-1],['nextPart',1]]){const a=document.getElementById(id);const target=partLinks[index+offset];a.hidden=!target;if(target)a.href=target.getAttribute('href')}
+}
+window.addEventListener('hashchange',()=>{showPart();document.querySelector('.sticky').scrollIntoView({block:'start'})});
+showPart();
