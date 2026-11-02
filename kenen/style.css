@@ -8,3 +8,5 @@ header{align-items:center}.brand{display:flex;align-items:center;gap:10px;text-d
 
 /* v03: prevent input zoom on mobile */
 textarea{font-size:16px}label.core{display:flex;gap:12px;padding:12px 0;align-items:flex-start}label.core input{margin-top:4px;flex-shrink:0}
+
+.situation-group{border-top:2px solid #dd641f;margin-top:32px;padding-top:16px}.situation-group>h3{font-size:21px;color:#a54712}
